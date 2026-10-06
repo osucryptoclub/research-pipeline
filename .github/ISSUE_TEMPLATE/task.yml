@@ -1,0 +1,24 @@
+name: Task
+description: A piece of work someone can claim
+labels: ["task"]
+body:
+  - type: dropdown
+    id: team
+    attributes:
+      label: Team
+      options: [Archive, Collectors, Reader, Source curators, Research liaison, Leads]
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What needs to happen
+    validations:
+      required: true
+  - type: textarea
+    id: done
+    attributes:
+      label: Done when
+      description: How we know it's finished
+    validations:
+      required: true
