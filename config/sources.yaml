@@ -1,0 +1,40 @@
+# Topics and sources for the research pipeline.
+#
+# Topics: an item gets every topic tag whose keywords appear in its title or summary.
+#   Adding a topic is just adding an entry here. Keywords are case-insensitive whole words,
+#   so list plurals and variants separately ("stablecoin" won't match "stablecoins").
+#
+# Sources: a source only runs when approved: true. Research signs off before that flips.
+#   id       unique, lowercase, dashes only. Never change it once items are collected.
+#   type     which collector handles it (collectors/types/). Supported: rss
+#   tags     topics always applied to this source, on top of keyword matches
+
+topics:
+  stablecoins:
+    name: Stablecoins
+    keywords: [stablecoin, stablecoins, usdc, usdt, tether, genius act, payment stablecoin, reserve report]
+  tokenization:
+    name: Tokenization and real-world assets
+    keywords: [tokenization, tokenized, tokenize, real-world asset, real-world assets, rwa]
+  regulation:
+    name: Regulation and market structure
+    keywords: [regulation, sec, cftc, market structure, clarity act, enforcement, rulemaking, crypto asset]
+  bitcoin-institutional:
+    name: Bitcoin as an institutional asset
+    keywords: [bitcoin etf, spot bitcoin, bitcoin treasury, strategic bitcoin reserve]
+  ai-crypto:
+    name: AI and crypto
+    keywords: [ai agent, agent payment, agentic, x402]
+  prediction-markets:
+    name: Prediction markets
+    keywords: [prediction market, kalshi, polymarket, event contract]
+
+sources:
+  # Example source, pending Research sign-off. Source curators: replace or approve.
+  - id: sec-press-releases
+    name: SEC press releases
+    type: rss
+    url: https://www.sec.gov/news/pressreleases.rss
+    tags: [regulation]
+    approved: false
+    notes: Official SEC announcements. Requires a User-Agent with contact info.

@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "source_id": "sample",
+    "url": "https://example.com/sample-1",
+    "title": "Sample item: this is placeholder data",
+    "summary": "You're seeing this because NEXT_PUBLIC_SUPABASE_URL isn't set. Once the club database is connected, real collected items replace these.",
+    "published_at": "2026-10-06T12:00:00Z",
+    "tags": ["stablecoins", "regulation"]
+  },
+  {
+    "id": 2,
+    "source_id": "sample",
+    "url": "https://example.com/sample-2",
+    "title": "Sample item: tokenized treasury fund update",
+    "summary": "Placeholder text so the Reader team can build the layout before real data arrives.",
+    "published_at": "2026-10-05T15:30:00Z",
+    "tags": ["tokenization"]
+  },
+  {
+    "id": 3,
+    "source_id": "sample",
+    "url": "https://example.com/sample-3",
+    "title": "Sample item: an item with no tags",
+    "summary": null,
+    "published_at": null,
+    "tags": []
+  }
+]
