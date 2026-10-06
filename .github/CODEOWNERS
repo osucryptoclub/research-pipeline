@@ -1,0 +1,9 @@
+# Auto-requests a review from the owning team when a PR touches these paths.
+# Gagan (tech lead) has final say on merges everywhere.
+
+*                       @osucryptoclub/pipeline-leads
+/supabase/              @osucryptoclub/archive
+/collectors/            @osucryptoclub/collectors
+/.github/workflows/     @osucryptoclub/collectors @osucryptoclub/pipeline-leads
+/reader/                @osucryptoclub/reader
+/config/sources.yaml    @osucryptoclub/source-curators
