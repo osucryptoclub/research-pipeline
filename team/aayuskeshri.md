@@ -1,0 +1,6 @@
+- **GitHub:** @AayusK
+- **Team:** Archive
+- **Year and major:** Junior in Computer Engineering
+- **Experience:** Supabase, SQL, Python, Java, React
+- **Want to learn:** Want to learn more about how the blockchain work
+- **Something in crypto I find interesting:** How different blockchains and work and how their security works
