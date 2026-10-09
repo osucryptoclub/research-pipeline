@@ -30,13 +30,13 @@ topics:
     keywords: [prediction market, kalshi, polymarket, event contract]
 
 sources:
-  # Example source, pending Research sign-off. Source curators: replace or approve.
+  # SEC press releases for the research pipeline.
   - id: sec-press-releases
     name: SEC press releases
     type: rss
     url: https://www.sec.gov/news/pressreleases.rss
     tags: [regulation]
-    approved: false
+    approved: true
     notes: >-
       Official SEC announcements.
       1. Maximum 10 requests per second per user, totaled across machines.
