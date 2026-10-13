@@ -30,11 +30,20 @@ topics:
     keywords: [prediction market, kalshi, polymarket, event contract]
 
 sources:
-  # Example source, pending Research sign-off. Source curators: replace or approve.
+  # SEC press releases for the research pipeline.
   - id: sec-press-releases
     name: SEC press releases
     type: rss
     url: https://www.sec.gov/news/pressreleases.rss
     tags: [regulation]
-    approved: false
-    notes: Official SEC announcements. Requires a User-Agent with contact info.
+    approved: true
+    notes: >-
+      Official SEC announcements.
+      1. Maximum 10 requests per second per user, totaled across machines.
+      Use efficient requests and download only what you need.
+      2. Declare your bot in the User-Agent header, including company
+      identification and an administrative contact email. Undeclared tools
+      may be blocked.
+      3. Excessive traffic can trigger temporary IP restrictions. The policy
+      says access may resume after the request rate stays below the threshold
+      for 10 minutes.
