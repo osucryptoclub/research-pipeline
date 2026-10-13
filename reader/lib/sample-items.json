@@ -6,7 +6,10 @@
     "title": "Sample item: this is placeholder data",
     "summary": "You're seeing this because NEXT_PUBLIC_SUPABASE_URL isn't set. Once the club database is connected, real collected items replace these.",
     "published_at": "2026-10-06T12:00:00Z",
-    "tags": ["stablecoins", "regulation"]
+    "tags": [
+      "stablecoins",
+      "regulation"
+    ]
   },
   {
     "id": 2,
@@ -15,7 +18,9 @@
     "title": "Sample item: tokenized treasury fund update",
     "summary": "Placeholder text so the Reader team can build the layout before real data arrives.",
     "published_at": "2026-10-05T15:30:00Z",
-    "tags": ["tokenization"]
+    "tags": [
+      "tokenization"
+    ]
   },
   {
     "id": 3,
@@ -25,5 +30,40 @@
     "summary": null,
     "published_at": null,
     "tags": []
+  },
+  {
+    "id": 4,
+    "source_id": "sample",
+    "url": "https://example.com/sample-4",
+    "title": "Sample item: a deliberately long title to check that wrapping stays tidy on a 375px wide phone screen and on desktop",
+    "summary": "Placeholder text. Summaries are clamped to two lines in the list so long ones never push other rows off the screen, which keeps scanning fast even when a source publishes lengthy abstracts.",
+    "published_at": "2026-10-04T09:00:00Z",
+    "tags": [
+      "bitcoin-institutional",
+      "regulation"
+    ]
+  },
+  {
+    "id": 5,
+    "source_id": "sample",
+    "url": "https://example.com/sample-5",
+    "title": "Sample item: agent payments pilot",
+    "summary": "Placeholder text for the AI and crypto topic.",
+    "published_at": "2026-10-03T18:00:00Z",
+    "tags": [
+      "ai-crypto",
+      "stablecoins"
+    ]
+  },
+  {
+    "id": 6,
+    "source_id": "sample",
+    "url": "https://example.com/sample-6",
+    "title": "Sample item: event contract market update",
+    "summary": "Placeholder text for the prediction markets topic.",
+    "published_at": "2026-10-02T11:00:00Z",
+    "tags": [
+      "prediction-markets"
+    ]
   }
 ]

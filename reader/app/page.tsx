@@ -1,20 +1,36 @@
+import { ItemList } from "@/components/ItemList";
+import { ThemeToggle } from "@/components/ThemeToggle";
+import { TopicNav } from "@/components/TopicNav";
+import { groupByAge } from "@/lib/groups";
 import { getLatestItems } from "@/lib/items";
+import { parseTopic, topicName } from "@/lib/topics";
 
 // Always fetch fresh data instead of building a static page.
 export const dynamic = "force-dynamic";
 
-function formatDate(iso: string | null) {
-  if (!iso) return "Date unknown";
-  return new Date(iso).toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" });
-}
+type Props = { searchParams: Promise<{ topic?: string | string[] }> };
 
-export default async function Home() {
+export default async function Home({ searchParams }: Props) {
+  const topic = parseTopic((await searchParams).topic);
   const { items, usingSample, error } = await getLatestItems();
 
+  // Counts cover the latest items fetched, so they match what the page can show.
+  const counts: Record<string, number> = {};
+  for (const item of items) {
+    for (const tag of item.tags) counts[tag] = (counts[tag] ?? 0) + 1;
+  }
+  const visible = topic ? items.filter((i) => i.tags.includes(topic)) : items;
+
   return (
-    <main>
-      <h1>Research Pipeline</h1>
-      <p className="sub">Latest items collected from Research-approved sources.</p>
+    <>
+      <header className="topbar">
+        <h1>Research Pipeline</h1>
+        <span className="sub">
+          {visible.length} of latest {items.length} items
+          {topic ? ` · ${topicName(topic)}` : ""}
+        </span>
+        <ThemeToggle />
+      </header>
 
       {usingSample && (
         <p className="notice">
@@ -22,28 +38,18 @@ export default async function Home() {
         </p>
       )}
       {error && <p className="notice error">Couldn&apos;t load items: {error}</p>}
-      {!error && items.length === 0 && <p>No items collected yet.</p>}
 
-      <ul className="items">
-        {items.map((item) => (
-          <li key={item.id}>
-            <a href={item.url} target="_blank" rel="noreferrer">
-              {item.title ?? item.url}
-            </a>
-            <div className="meta">
-              {item.source_id} · {formatDate(item.published_at)}
-            </div>
-            {item.summary && <p className="summary">{item.summary}</p>}
-            {item.tags.length > 0 && (
-              <div className="tags">
-                {item.tags.map((t) => (
-                  <span key={t}>{t}</span>
-                ))}
-              </div>
-            )}
-          </li>
-        ))}
-      </ul>
-    </main>
+      <div className="layout">
+        <TopicNav active={topic} counts={counts} total={items.length} />
+        <main>
+          {!error && (
+            <ItemList
+              groups={groupByAge(visible)}
+              emptyText={topic ? "No items for this topic in the latest items." : "No items collected yet."}
+            />
+          )}
+        </main>
+      </div>
+    </>
   );
 }
