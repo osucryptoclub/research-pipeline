@@ -1,6 +1,6 @@
 # Aidan Kelly
 
- **GitHub:** @Aidankelly2006-jpg
+- **GitHub:** @Aidankelly2006-jpg
 - **Team:** Reader
 - **Year and major:** Junior, Finance Major
 - **Experience:** Ai automations, Claude code
