@@ -6,6 +6,8 @@ from time import struct_time
 import feedparser
 import requests
 
+from pipeline.text import clean_html
+
 
 def _to_iso(t: struct_time | None) -> str | None:
     if not t:
@@ -25,8 +27,9 @@ def parse(feed_text: str, source_id: str) -> list[dict]:
                 "source_id": source_id,
                 "url": link,
                 "title": entry.get("title"),
-                "summary": entry.get("summary"),
+                "summary": clean_html(entry.get("summary")),
                 "published_at": _to_iso(entry.get("published_parsed") or entry.get("updated_parsed")),
+                # raw keeps the summary exactly as published, HTML included.
                 "raw": {k: str(v) for k, v in entry.items() if isinstance(v, (str, int, float))},
             }
         )
