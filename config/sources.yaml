@@ -28,6 +28,30 @@ topics:
   prediction-markets:
     name: Prediction markets
     keywords: [prediction market, kalshi, polymarket, event contract]
+  privacy-health:
+    name: Privacy and digital identity in healthcare
+    keywords:
+      - health data
+      - medical record
+      - medical records
+      - patient privacy
+      - hipaa
+      - electronic health record
+      - electronic health records
+      - ehr
+      - ehrs
+      - health information exchange
+      - digital identity
+      - decentralized identity
+      - decentralized identifier
+      - decentralized identifiers
+      - self-sovereign identity
+      - verifiable credential
+      - verifiable credentials
+      - onc
+      - interoperability
+      - health wallet
+      - health wallets
 
 sources:
   # SEC press releases for the research pipeline.
@@ -47,3 +71,60 @@ sources:
       3. Excessive traffic can trigger temporary IP restrictions. The policy
       says access may resume after the request rate stays below the threshold
       for 10 minutes.
+
+  - id: astp-onc-health-it-blog
+    name: ASTP/ONC Health IT Blog
+    type: rss
+    url: https://healthit.gov/blog/feed/
+    tags: [privacy-health]
+    approved: false
+    notes: >-
+      Official federal health IT policy updates from ASTP/ONC, including
+      interoperability, information blocking, patient access, and health data
+      privacy. Public RSS feed; no API key required.
+
+  - id: sequoia-project
+    name: The Sequoia Project
+    type: rss
+    url: https://sequoiaproject.org/feed/
+    tags: [privacy-health]
+    approved: false
+    notes: >-
+      Official updates from the nonprofit that serves as the Recognized
+      Coordinating Entity for TEFCA, covering trusted health information
+      exchange, information blocking, and patient data access. Public RSS
+      feed; no API key required.
+
+  - id: smart-health-it
+    name: SMART Health IT
+    type: rss
+    url: https://smarthealthit.org/feed/
+    tags: [privacy-health]
+    approved: false
+    notes: >-
+      Health data interoperability research and standards work from the
+      Boston Children's Hospital Computational Health Informatics Program,
+      including FHIR, apps, authorization, and federal health IT policy.
+      Public RSS feed; no API key required.
+
+  - id: directtrust
+    name: DirectTrust
+    type: rss
+    url: https://directtrust.org/feed/
+    tags: [privacy-health]
+    approved: false
+    notes: >-
+      Official updates from the nonprofit standards and trust-framework
+      organization for secure health information exchange, identity, and
+      interoperability. Public RSS feed; no API key required.
+
+  - id: w3c-verifiable-credentials
+    name: W3C Verifiable Credentials Working Group
+    type: rss
+    url: https://www.w3.org/groups/wg/vc/feed/
+    tags: [privacy-health]
+    approved: false
+    notes: >-
+      Official W3C working-group activity for verifiable credentials,
+      including privacy, threat models, identity, and credential status.
+      Public RSS feed; no API key required.
