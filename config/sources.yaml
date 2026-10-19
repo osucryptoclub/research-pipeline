@@ -28,6 +28,60 @@ topics:
   prediction-markets:
     name: Prediction markets
     keywords: [prediction market, kalshi, polymarket, event contract]
+  energy-compute:
+    name: Energy and data center compute
+    keywords:
+      - bitcoin mining
+      - crypto mining
+      - energy consumption
+      - data center
+      - data centers
+      - datacenter
+      - datacenters
+      - data centre
+      - data centres
+      - electricity usage
+      - proof of work
+      - hash rate
+      - carbon footprint
+      - renewable energy
+      - kilowatt
+      - kilowatts
+      - megawatt
+      - megawatts
+      - gigawatt
+      - gigawatts
+      - cbeci
+      - digiconomist
+      - power demand
+      - electricity demand
+      - grid
+      - utilities
+      - interconnection
+  privacy-health:
+    name: Privacy and digital identity in healthcare
+    keywords:
+      - health data
+      - medical record
+      - medical records
+      - patient privacy
+      - hipaa
+      - electronic health record
+      - electronic health records
+      - ehr
+      - ehrs
+      - health information exchange
+      - digital identity
+      - decentralized identity
+      - decentralized identifier
+      - decentralized identifiers
+      - self-sovereign identity
+      - verifiable credential
+      - verifiable credentials
+      - onc
+      - interoperability
+      - health wallet
+      - health wallets
 
 sources:
   # SEC press releases for the research pipeline.
@@ -47,3 +101,115 @@ sources:
       3. Excessive traffic can trigger temporary IP restrictions. The policy
       says access may resume after the request rate stays below the threshold
       for 10 minutes.
+
+  - id: astp-onc-health-it-blog
+    name: ASTP/ONC Health IT Blog
+    type: rss
+    url: https://healthit.gov/blog/feed/
+    tags: [privacy-health]
+    approved: false
+    notes: >-
+      Official federal health IT policy updates from ASTP/ONC, including
+      interoperability, information blocking, patient access, and health data
+      privacy. Public RSS feed; no API key required.
+
+  - id: sequoia-project
+    name: The Sequoia Project
+    type: rss
+    url: https://sequoiaproject.org/feed/
+    tags: [privacy-health]
+    approved: false
+    notes: >-
+      Official updates from the nonprofit that serves as the Recognized
+      Coordinating Entity for TEFCA, covering trusted health information
+      exchange, information blocking, and patient data access. Public RSS
+      feed; no API key required.
+
+  - id: smart-health-it
+    name: SMART Health IT
+    type: rss
+    url: https://smarthealthit.org/feed/
+    tags: [privacy-health]
+    approved: false
+    notes: >-
+      Health data interoperability research and standards work from the
+      Boston Children's Hospital Computational Health Informatics Program,
+      including FHIR, apps, authorization, and federal health IT policy.
+      Public RSS feed; no API key required.
+
+  - id: directtrust
+    name: DirectTrust
+    type: rss
+    url: https://directtrust.org/feed/
+    tags: [privacy-health]
+    approved: false
+    notes: >-
+      Official updates from the nonprofit standards and trust-framework
+      organization for secure health information exchange, identity, and
+      interoperability. Public RSS feed; no API key required.
+
+  - id: w3c-verifiable-credentials
+    name: W3C Verifiable Credentials Working Group
+    type: rss
+    url: https://www.w3.org/groups/wg/vc/feed/
+    tags: [privacy-health]
+    approved: false
+    notes: >-
+      Official W3C working-group activity for verifiable credentials,
+      including privacy, threat models, identity, and credential status.
+      Public RSS feed; no API key required.
+
+  - id: eia-today-in-energy
+    name: U.S. EIA Today in Energy
+    type: rss
+    url: https://www.eia.gov/rss/todayinenergy.xml
+    tags: [energy-compute]
+    approved: true
+    notes: >-
+      Official U.S. Energy Information Administration data and analysis on
+      electricity demand, generation, grid load, and fuel mix. Public RSS
+      feed; no API key required.
+
+  - id: us-doe-news
+    name: U.S. Department of Energy News
+    type: rss
+    url: https://www.energy.gov/rss
+    tags: [energy-compute]
+    approved: true
+    notes: >-
+      Official Energy Department announcements on grid infrastructure,
+      electricity reliability, nuclear energy, and federal funding. Public
+      RSS feed; no API key required.
+
+  - id: energy-institute-haas
+    name: Energy Institute at Haas
+    type: rss
+    url: https://energyathaas.wordpress.com/feed/
+    tags: [energy-compute]
+    approved: true
+    notes: >-
+      Academic energy economics and electricity-market analysis from the
+      University of California, Berkeley. Public RSS feed; no API key
+      required.
+
+  - id: data-center-frontier
+    name: Data Center Frontier
+    type: rss
+    url: https://www.datacenterfrontier.com/__rss/website-scheduled-content.xml?input=%7B%22sectionAlias%22%3A%22home%22%7D
+    tags: [energy-compute]
+    approved: true
+    notes: >-
+      Data center infrastructure reporting focused on power availability,
+      AI campuses, siting, permitting, and sustainability. Public RSS feed;
+      no API key required.
+
+  - id: latitude-media
+    name: Latitude Media
+    type: rss
+    url: https://www.latitudemedia.com/rss
+    tags: [energy-compute]
+    approved: true
+    notes: >-
+      Reporting and analysis on AI electricity demand, grid constraints,
+      virtual power plants, and the energy transition. Public RSS feed; no
+      API key required.

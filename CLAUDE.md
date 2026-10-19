@@ -23,7 +23,12 @@ Our edge is **what the tool knows**, not how smart it is:
 
 **Everything you build should protect these four things.** If a change would make the archive less complete, less trustworthy, or less traceable, don't make it.
 
-### Topics (in priority order)
+### Research's current papers (top priority)
+Research is writing two papers for the research competition at the University Blockchain Conference in Austin. Sources and tags for these come first right now:
+- **Energy and data center compute**
+- **Privacy and digital identity in healthcare**
+
+### Crypto topics (in priority order)
 1. Stablecoins: regulation, bank-issued stablecoins, payments
 2. Tokenization and real-world assets
 3. Regulation and market structure
@@ -52,7 +57,12 @@ If a task needs one of these decisions and the issue doesn't settle it, stop and
 | `research-liaison` | Testing from the Research side and relaying feedback |
 
 ### Current milestone
-**Milestone 1 (Oct 14):** one Research-approved source is collected daily into the database and shows up on a basic Reader page. Small on purpose: every piece working end to end once, then grow. Favor work that gets this path working over polish.
+**Milestone 1 (Oct 14): done.** The SEC press releases feed is collected daily and shows on the live Reader.
+
+**Milestone 2 (around Oct 20):** Research can actually use the Reader for their two papers: 8 to 10 approved sources on those topics are collected daily, and the Reader can search and filter them. Everything should be finished and debugged by **Oct 30**. An "Ask AI" feature comes after that, and only once everything else works.
+
+### Team briefs
+Each team's tasks for the current week are in `docs/teams/<team>.md` (`curators`, `collectors`, `archive`, `reader`, `liaison`). When someone tells you their team, read their brief before anything else, and use it to pick the task. If the brief and an issue disagree, the issue wins.
 
 ### What we're watching out for
 - **Nobody uses it.** If Research doesn't trust it or never opens it, we built a demo, not a tool.

@@ -4,7 +4,7 @@
   --paper: #f3efe6; --surface: #faf8f2; --ink: #1c1b18; --muted: #66625a; --rule: #d9d3c4;
   --brand: #1e4d3b; --on-brand: #faf8f2; --accent: #8f4a08; --hover: #ebe6d9; --error: #a31621;
   --t-stablecoins: #1e6b4e; --t-tokenization: #6b46b5; --t-regulation: #a53a0a;
-  --t-bitcoin-institutional: #7a5509; --t-ai-crypto: #0b6e83; --t-prediction-markets: #a8164f; --t-none: #66625a;
+  --t-bitcoin-institutional: #7a5509; --t-ai-crypto: #0b6e83; --t-prediction-markets: #a8164f; --t-energy-compute: #5b6b00; --t-privacy-health: #1f5fa8; --t-none: #66625a;
   --serif: var(--font-serif), Georgia, serif;
   --sans: var(--font-sans), system-ui, sans-serif;
   --mono: var(--font-mono), ui-monospace, Menlo, monospace;
@@ -15,7 +15,7 @@
     --paper: #151512; --surface: #1c1b17; --ink: #ece8dd; --muted: #a39e92; --rule: #34322b;
     --brand: #7fcaa3; --on-brand: #151512; --accent: #e3a04a; --hover: #25231d; --error: #ff7b7b;
     --t-stablecoins: #4ade9d; --t-tokenization: #b794f6; --t-regulation: #fb923c;
-    --t-bitcoin-institutional: #f6c453; --t-ai-crypto: #4dd0e1; --t-prediction-markets: #f472b6; --t-none: #a39e92;
+    --t-bitcoin-institutional: #f6c453; --t-ai-crypto: #4dd0e1; --t-prediction-markets: #f472b6; --t-energy-compute: #c4d65a; --t-privacy-health: #7db3ff; --t-none: #a39e92;
     --cover-mix: 20%;
   }
 }
@@ -23,7 +23,7 @@
   --paper: #151512; --surface: #1c1b17; --ink: #ece8dd; --muted: #a39e92; --rule: #34322b;
   --brand: #7fcaa3; --on-brand: #151512; --accent: #e3a04a; --hover: #25231d; --error: #ff7b7b;
   --t-stablecoins: #4ade9d; --t-tokenization: #b794f6; --t-regulation: #fb923c;
-  --t-bitcoin-institutional: #f6c453; --t-ai-crypto: #4dd0e1; --t-prediction-markets: #f472b6; --t-none: #a39e92;
+  --t-bitcoin-institutional: #f6c453; --t-ai-crypto: #4dd0e1; --t-prediction-markets: #f472b6; --t-energy-compute: #c4d65a; --t-privacy-health: #7db3ff; --t-none: #a39e92;
   --cover-mix: 20%;
 }
 
@@ -105,6 +105,8 @@ button { font: inherit; color: inherit; cursor: pointer; }
 [data-topic="bitcoin-institutional"].cover { color: var(--t-bitcoin-institutional); }
 [data-topic="ai-crypto"].cover { color: var(--t-ai-crypto); }
 [data-topic="prediction-markets"].cover { color: var(--t-prediction-markets); }
+[data-topic="energy-compute"].cover { color: var(--t-energy-compute); }
+[data-topic="privacy-health"].cover { color: var(--t-privacy-health); }
 
 /* Top stories */
 .stories { margin-top: 52px; }
@@ -121,6 +123,8 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .kicker[data-topic="bitcoin-institutional"] { color: var(--t-bitcoin-institutional); }
 .kicker[data-topic="ai-crypto"] { color: var(--t-ai-crypto); }
 .kicker[data-topic="prediction-markets"] { color: var(--t-prediction-markets); }
+.kicker[data-topic="energy-compute"] { color: var(--t-energy-compute); }
+.kicker[data-topic="privacy-health"] { color: var(--t-privacy-health); }
 .lead-title { font: 500 clamp(1.5rem, 4.5vw, 2.2rem)/1.15 var(--serif); letter-spacing: -0.02em; text-decoration: none; overflow-wrap: anywhere; text-wrap: balance; }
 .lead-title:hover, .more-title:hover, .title:hover { color: var(--brand); text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; }
 .lead-summary { margin: 0; color: var(--muted); display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
@@ -157,6 +161,8 @@ section[aria-labelledby="latest-h"] { margin-top: 52px; }
 [data-topic="bitcoin-institutional"].tag { color: var(--t-bitcoin-institutional); }
 [data-topic="ai-crypto"].tag { color: var(--t-ai-crypto); }
 [data-topic="prediction-markets"].tag { color: var(--t-prediction-markets); }
+[data-topic="energy-compute"].tag { color: var(--t-energy-compute); }
+[data-topic="privacy-health"].tag { color: var(--t-privacy-health); }
 
 .result-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 14px; }
 .clear { font: 0.75rem var(--mono); padding: 3px 10px; background: transparent; border: 1px solid var(--rule); border-radius: 2px; }
