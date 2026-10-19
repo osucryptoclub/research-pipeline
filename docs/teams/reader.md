@@ -17,7 +17,7 @@ Think like a researcher writing a paper on data center energy use or healthcare 
 Meet as a team, pick what works from each mockup, and write the agreed design in a GitHub issue so everyone builds the same thing. Aiden has the final say.
 
 ### 3. Build it in `reader/`
-- A **search box** that calls Archive's `search_items` function through `supabase.rpc('search_items', { q, topic, source, since, until })`. Until it exists, build against the sample data.
+- A **search box**. Satya is wiring it in #30 (due Oct 21) with supabase-js `.textSearch('search', q, { type: 'websearch' })` and a `?q=` param that works together with `?topic=`. Aidan reviews it.
 - **Filters** by topic tag and by source. Clicking a tag should filter by it.
 - **Every item links to its original source.** Show the source and the date on every item.
 - Summaries are plain text. Never render HTML from a source.

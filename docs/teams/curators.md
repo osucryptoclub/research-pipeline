@@ -1,20 +1,17 @@
-# Source curators: this week
+# Source curators: Oct 14-30
 
 **Your job:** decide what goes into the archive. You are step one. Collectors, Archive and Reader are all waiting on your sources, so speed matters most here.
 
-**Goal by around Oct 20:** 8 to 10 new sources for Research's two papers, approved by Research and added to `config/sources.yaml`.
+**Goal by Fri Oct 30:** 10+ sources for Research's two papers, approved by Research and added to `config/sources.yaml`.
 
 ## Tasks
 
-### 1. Add the two new topics
-In `config/sources.yaml`, add two entries under `topics:`, one per paper. Suggested ids and starting keywords:
+### 1. The two new topics: done
+`energy-compute` and `privacy-health` are in `config/sources.yaml` (#57, #55). The 5 energy sources are approved and collecting. Research signed off on the health sources on Oct 16, and #56 turns them on (all but `directtrust`, see below).
 
-- `energy-compute`: data center, data centers, power demand, electricity demand, grid, compute, energy consumption, hyperscale
-- `health-identity`: digital identity, patient privacy, hipaa, health data, health records, identity verification, privacy
+Keep tuning keywords as real items come in. Matching is whole-word and ignores case, so list plurals separately. If you add or rename a topic, update `reader/lib/topics.ts` too, or CI fails.
 
-Keywords match whole words and ignore case, so list plurals separately. Check them against real items with `--dry-run` (task 4) and tune them.
-
-**Done when:** `python scripts/validate_config.py` passes and the PR is merged.
+**Feeds that block bots:** `directtrust` returns 403 (a Cloudflare challenge) to automated requests, so it can't be collected. Always run `--dry-run` on a source before it's approved.
 
 ### 2. Find 8 to 10 sources
 Look for credible sources on the two topics: government agencies, standards bodies, research institutions, university labs, and respected industry groups.

@@ -53,7 +53,7 @@ When the anon key tries to write, inserts are rejected with an error. Updates an
    ```
 3. Every line should say `PASS`.
 
-The script writes a test row (`source_id = 'archive-smoke-test'`), so run it against your own free Supabase project, not the club database, unless a lead has approved it. To set one up, create a project at supabase.com, paste `migrations/0001_items.sql` into its SQL Editor, and run it. It doesn't run in CI because it needs the network and real keys.
+The script writes a test row (`source_id = 'archive-smoke-test'`), so run it against your own free Supabase project, never the club database: a test row there would show up on the live site. To check the club database, use `python ../scripts/check_items_table.py --read-only`. It only needs `SUPABASE_URL` and `SUPABASE_ANON_KEY`, confirms the anon key can read, and confirms there are no test rows. To set one up, create a project at supabase.com, paste `migrations/0001_items.sql` into its SQL Editor, and run it. It doesn't run in CI because it needs the network and real keys.
 
 ## Changing the schema
 

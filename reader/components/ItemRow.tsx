@@ -1,4 +1,5 @@
 import type { Item } from "@/lib/items";
+import { decodeEntities } from "@/lib/text";
 import { topicName } from "@/lib/topics";
 
 function formatDate(iso: string | null) {
@@ -10,7 +11,7 @@ export function ItemRow({ item }: { item: Item }) {
   return (
     <li className="row">
       <a className="title" href={item.url} target="_blank" rel="noopener noreferrer">
-        {item.title ?? item.url}
+        {item.title ? decodeEntities(item.title) : item.url}
       </a>
       <div className="meta">
         <span>{item.source_id}</span>
@@ -22,7 +23,7 @@ export function ItemRow({ item }: { item: Item }) {
           </span>
         ))}
       </div>
-      {item.summary && <p className="summary">{item.summary}</p>}
+      {item.summary && <p className="summary">{decodeEntities(item.summary)}</p>}
     </li>
   );
 }
