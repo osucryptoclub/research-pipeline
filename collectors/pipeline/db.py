@@ -5,6 +5,19 @@ import os
 import requests
 
 
+def auth_headers(key: str) -> dict:
+    """Headers that authenticate a request with a Supabase key.
+
+    New-style keys (sb_publishable_..., sb_secret_...) aren't JWTs, so they only
+    go in the apikey header. Legacy anon and service_role keys are JWTs and also
+    go in Authorization as a Bearer token.
+    """
+    headers = {"apikey": key}
+    if not key.startswith("sb_"):
+        headers["Authorization"] = f"Bearer {key}"
+    return headers
+
+
 def insert_items(items: list[dict]) -> int:
     """Insert items, skipping any (source_id, url) already in the archive. Returns rows sent."""
     if not items:
@@ -15,8 +28,7 @@ def insert_items(items: list[dict]) -> int:
         f"{url}/rest/v1/items?on_conflict=source_id,url",
         json=items,
         headers={
-            "apikey": key,
-            "Authorization": f"Bearer {key}",
+            **auth_headers(key),
             "Content-Type": "application/json",
             "Prefer": "resolution=ignore-duplicates,return=minimal",
         },

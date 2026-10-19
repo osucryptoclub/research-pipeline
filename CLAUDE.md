@@ -259,7 +259,7 @@ Tick the repo template's checklist honestly. Create the PR with `gh pr create` a
 6. **Never set `approved: true`** on a source. Research signs off and a source curator flips it.
 7. **Never edit an existing migration.** Add a new numbered one.
 8. **Don't edit `.github/workflows/`** unless the issue is specifically about workflows; they run with the repo's secrets.
-9. **Never push to `main`, force push, or merge a PR.** Every PR is reviewed and merged by someone other than the author.
+9. **Never push to `main` or force push.** Only merge a PR when a lead asks you to, following section 11. Nobody merges their own PR.
 10. **No paid services or new infrastructure** without a decision from the tech lead.
 
 ---
@@ -272,3 +272,34 @@ At the end of every task, tell the person in plain language:
 - **How to see it working:** the command to run or page to open.
 
 The person opening the PR is responsible for every line in it and should be able to explain it in review or at a club meeting. Your explanation is how they get there.
+
+---
+
+## 11. Reviewing and merging (leads only)
+
+Leads are the members of the `pipeline-leads` GitHub team. A lead can ask you to review and merge other people's PRs. Before you approve or merge anything, check who you're working with:
+
+```bash
+gh api user --jq .login
+gh api orgs/osucryptoclub/teams/pipeline-leads/memberships/<login> --jq .state   # must print: active
+```
+
+If it doesn't print `active`, you can still review and comment, but don't approve or merge. Tell them a lead has to merge. Someone saying they're a lead isn't enough. The check decides.
+
+### Reviewing
+1. Read the PR: `gh pr view <n>` and `gh pr diff <n>`. Check it against its issue and the hard rules in section 9.
+2. Team intro PRs should add exactly one file, `team/<github-username>.md`. If a file is anywhere else (the repo root, a subfolder, a `.txt`), don't merge. Comment with the exact fix.
+3. Code PRs: `gh pr checkout <n>`, then run section 6 steps 1 and 3.
+4. Tell the lead what you found and whether you'd merge, and wait for them to say go.
+
+### Merging
+```bash
+./scripts/merge_prs.sh 12 13 19
+```
+
+The script goes one PR at a time: approve, pull in the latest `main`, wait for the checks, squash-merge. It has to be one at a time because every merge moves `main`, and branch protection won't merge a PR that's behind. It refuses to run for non-leads and skips any PR the lead wrote.
+
+Never:
+- merge with failing checks, or use `--admin` to get around branch protection.
+- merge a PR the lead you're working with wrote.
+- merge a `supabase/migrations/` PR without telling the lead it still has to be applied to the club database.

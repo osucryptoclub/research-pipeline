@@ -6,9 +6,26 @@ from pathlib import Path
 
 import yaml
 
-CONFIG = Path(__file__).resolve().parents[1] / "config" / "sources.yaml"
+ROOT = Path(__file__).resolve().parents[1]
+CONFIG = ROOT / "config" / "sources.yaml"
+READER_TOPICS = ROOT / "reader" / "lib" / "topics.ts"
 SUPPORTED_TYPES = {"rss"}
 ID_RE = re.compile(r"^[a-z0-9]+(-[a-z0-9]+)*$")
+# Matches the ids in reader/lib/topics.ts, e.g. { id: "stablecoins", name: ... }
+READER_TOPIC_ID_RE = re.compile(r"""\bid:\s*["']([^"']+)["']""")
+
+
+def reader_topic_errors(topics: dict) -> list[str]:
+    """The Reader keeps its own copy of the topic list. Flag any drift from sources.yaml."""
+    if not READER_TOPICS.exists():
+        return []
+    reader_ids = set(READER_TOPIC_ID_RE.findall(READER_TOPICS.read_text(encoding="utf-8")))
+    errors = []
+    for tid in sorted(set(topics) - reader_ids):
+        errors.append(f"topic {tid!r} is missing from reader/lib/topics.ts (the Reader can't filter by it)")
+    for tid in sorted(reader_ids - set(topics)):
+        errors.append(f"reader/lib/topics.ts has {tid!r}, which isn't a topic in sources.yaml")
+    return errors
 
 
 def main() -> int:
@@ -21,6 +38,7 @@ def main() -> int:
             errors.append(f"topic {tid!r}: id must be lowercase with dashes")
         if not topic.get("keywords"):
             errors.append(f"topic {tid!r}: needs at least one keyword")
+    errors.extend(reader_topic_errors(topics))
 
     seen = set()
     for i, s in enumerate(config.get("sources") or []):

@@ -1,8 +1,9 @@
 """Check that the items table works and its security rules hold.
 
-    python scripts/check_items_table.py
+    python scripts/check_items_table.py              full check, writes a test row
+    python scripts/check_items_table.py --read-only  read-only check, safe on the club database
 
-Steps:
+Full check steps:
   1. Save a test item with the service role key.
   2. Read it back with the anon (public) key.
   3. Try to insert, update, and delete with the anon key. All must fail.
@@ -41,9 +42,42 @@ def auth_headers(key: str) -> dict:
     return headers
 
 
+def read_only_check() -> int:
+    """Checks that only read. Safe to run against the club database."""
+    missing = [v for v in ("SUPABASE_URL", "SUPABASE_ANON_KEY") if not os.environ.get(v)]
+    if missing:
+        print(f"Missing in .env: {', '.join(missing)}")
+        return 1
+    endpoint = os.environ["SUPABASE_URL"].rstrip("/") + "/rest/v1/items"
+    anon = auth_headers(os.environ["SUPABASE_ANON_KEY"])
+    print(f"Checking {endpoint} (read-only, nothing is written)\n")
+
+    resp = requests.get(
+        endpoint,
+        params={"select": "id"},
+        headers={**anon, "Prefer": "count=exact", "Range": "0-0"},
+        timeout=30,
+    )
+    ok = resp.ok
+    total = resp.headers.get("content-range", "?/?").split("/")[-1]
+    print(f"{'PASS' if ok else 'FAIL'}  anon key can read items  (HTTP {resp.status_code}, {total} rows)")
+    if not ok:
+        print(f"      {resp.text}")
+        return 1
+
+    resp = requests.get(
+        endpoint, params={**MATCH_TEST_ITEM, "select": "id"}, headers=anon, timeout=30
+    )
+    clean = resp.ok and resp.json() == []
+    print(f"{'PASS' if clean else 'FAIL'}  no smoke-test rows in this database")
+    return 0 if clean else 1
+
+
 def main() -> int:
     load_dotenv(Path(__file__).resolve().parents[1] / ".env")
-    missing = [v for v in ("SUPABASE_URL", "SUPABASE_SERVICE_ROLE_KEY", "SUPABASE_ANON_KEY") if not os.environ.get(v)]
+    if "--read-only" in sys.argv[1:]:
+        return read_only_check()
+    missing =[v for v in ("SUPABASE_URL", "SUPABASE_SERVICE_ROLE_KEY", "SUPABASE_ANON_KEY") if not os.environ.get(v)]
     if missing:
         print(f"Missing in .env: {', '.join(missing)}")
         return 1
