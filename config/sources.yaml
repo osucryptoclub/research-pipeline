@@ -142,11 +142,14 @@ sources:
     type: rss
     url: https://directtrust.org/feed/
     tags: [privacy-health]
-    approved: true
+    approved: false
     notes: >-
       Official updates from the nonprofit standards and trust-framework
       organization for secure health information exchange, identity, and
-      interoperability. Public RSS feed; no API key required.
+      interoperability. Public RSS feed; no API key required. Kept
+      unapproved for now: the feed returns 403 (a Cloudflare bot
+      challenge) to automated requests, so the collector can't read it,
+      and one failing approved source fails the whole daily run.
 
   - id: w3c-verifiable-credentials
     name: W3C Verifiable Credentials Working Group
