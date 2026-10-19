@@ -1,34 +1,20 @@
-import { ItemList } from "@/components/ItemList";
+import { Explorer } from "@/components/Explorer";
 import { ThemeToggle } from "@/components/ThemeToggle";
-import { TopicNav } from "@/components/TopicNav";
-import { groupByAge } from "@/lib/groups";
 import { getLatestItems } from "@/lib/items";
-import { parseTopic, topicName } from "@/lib/topics";
+import { formatUpdated } from "@/lib/updated";
 
 // Always fetch fresh data instead of building a static page.
 export const dynamic = "force-dynamic";
 
-type Props = { searchParams: Promise<{ topic?: string | string[] }> };
-
-export default async function Home({ searchParams }: Props) {
-  const topic = parseTopic((await searchParams).topic);
-  const { items, usingSample, error } = await getLatestItems();
-
-  // Counts cover the latest items fetched, so they match what the page can show.
-  const counts: Record<string, number> = {};
-  for (const item of items) {
-    for (const tag of item.tags) counts[tag] = (counts[tag] ?? 0) + 1;
-  }
-  const visible = topic ? items.filter((i) => i.tags.includes(topic)) : items;
+export default async function Home() {
+  const { items, usingSample, total, updatedAt, error } = await getLatestItems();
+  const updated = formatUpdated(updatedAt);
 
   return (
     <>
       <header className="topbar">
         <h1>Research Pipeline</h1>
-        <span className="sub">
-          {visible.length} of latest {items.length} items
-          {topic ? ` · ${topicName(topic)}` : ""}
-        </span>
+        <span className="sub">{updated ?? (usingSample ? "Sample data" : `${total} items`)}</span>
         <ThemeToggle />
       </header>
 
@@ -39,17 +25,14 @@ export default async function Home({ searchParams }: Props) {
       )}
       {error && <p className="notice error">Couldn&apos;t load items: {error}</p>}
 
-      <div className="layout">
-        <TopicNav active={topic} counts={counts} total={items.length} />
-        <main>
-          {!error && (
-            <ItemList
-              groups={groupByAge(visible)}
-              emptyText={topic ? "No items for this topic in the latest items." : "No items collected yet."}
-            />
-          )}
-        </main>
-      </div>
+      {!error && <Explorer items={items} total={total} updated={updated} />}
+
+      <footer className="footer">
+        <p>
+          Every item links to its original source. Text is shown as the source published it; figures are never written by AI.
+        </p>
+        <p>Built by the OSU Crypto Club Builders cohort for the Research cohort.</p>
+      </footer>
     </>
   );
 }
