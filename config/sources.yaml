@@ -77,7 +77,7 @@ sources:
     type: rss
     url: https://healthit.gov/blog/feed/
     tags: [privacy-health]
-    approved: false
+    approved: true
     notes: >-
       Official federal health IT policy updates from ASTP/ONC, including
       interoperability, information blocking, patient access, and health data
@@ -88,7 +88,7 @@ sources:
     type: rss
     url: https://sequoiaproject.org/feed/
     tags: [privacy-health]
-    approved: false
+    approved: true
     notes: >-
       Official updates from the nonprofit that serves as the Recognized
       Coordinating Entity for TEFCA, covering trusted health information
@@ -100,7 +100,7 @@ sources:
     type: rss
     url: https://smarthealthit.org/feed/
     tags: [privacy-health]
-    approved: false
+    approved: true
     notes: >-
       Health data interoperability research and standards work from the
       Boston Children's Hospital Computational Health Informatics Program,
@@ -112,7 +112,7 @@ sources:
     type: rss
     url: https://directtrust.org/feed/
     tags: [privacy-health]
-    approved: false
+    approved: true
     notes: >-
       Official updates from the nonprofit standards and trust-framework
       organization for secure health information exchange, identity, and
@@ -123,8 +123,19 @@ sources:
     type: rss
     url: https://www.w3.org/groups/wg/vc/feed/
     tags: [privacy-health]
-    approved: false
+    approved: true
     notes: >-
       Official W3C working-group activity for verifiable credentials,
       including privacy, threat models, identity, and credential status.
       Public RSS feed; no API key required.
+
+  - id: hipaa-journal
+    name: HIPAA Journal
+    type: rss
+    url: https://www.hipaajournal.com/feed/
+    tags: [privacy-health]
+    approved: false
+    notes: >-
+      Healthcare privacy, HIPAA enforcement, cybersecurity, and breach
+      reporting. Public RSS feed; no API key required. Proposed from the
+      Research source sheet and awaiting explicit Research approval.
