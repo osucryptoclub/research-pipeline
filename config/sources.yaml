@@ -156,3 +156,58 @@ sources:
       Official W3C working-group activity for verifiable credentials,
       including privacy, threat models, identity, and credential status.
       Public RSS feed; no API key required.
+
+  - id: eia-today-in-energy
+    name: U.S. EIA Today in Energy
+    type: rss
+    url: https://www.eia.gov/rss/todayinenergy.xml
+    tags: [energy-compute]
+    approved: true
+    notes: >-
+      Official U.S. Energy Information Administration data and analysis on
+      electricity demand, generation, grid load, and fuel mix. Public RSS
+      feed; no API key required.
+
+  - id: us-doe-news
+    name: U.S. Department of Energy News
+    type: rss
+    url: https://www.energy.gov/rss
+    tags: [energy-compute]
+    approved: true
+    notes: >-
+      Official Energy Department announcements on grid infrastructure,
+      electricity reliability, nuclear energy, and federal funding. Public
+      RSS feed; no API key required.
+
+  - id: energy-institute-haas
+    name: Energy Institute at Haas
+    type: rss
+    url: https://energyathaas.wordpress.com/feed/
+    tags: [energy-compute]
+    approved: true
+    notes: >-
+      Academic energy economics and electricity-market analysis from the
+      University of California, Berkeley. Public RSS feed; no API key
+      required.
+
+  - id: data-center-frontier
+    name: Data Center Frontier
+    type: rss
+    url: https://www.datacenterfrontier.com/__rss/website-scheduled-content.xml?input=%7B%22sectionAlias%22%3A%22home%22%7D
+    tags: [energy-compute]
+    approved: true
+    notes: >-
+      Data center infrastructure reporting focused on power availability,
+      AI campuses, siting, permitting, and sustainability. Public RSS feed;
+      no API key required.
+
+  - id: latitude-media
+    name: Latitude Media
+    type: rss
+    url: https://www.latitudemedia.com/rss
+    tags: [energy-compute]
+    approved: true
+    notes: >-
+      Reporting and analysis on AI electricity demand, grid constraints,
+      virtual power plants, and the energy transition. Public RSS feed; no
+      API key required.
