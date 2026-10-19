@@ -7,6 +7,7 @@ export const TOPICS = [
   { id: "bitcoin-institutional", name: "Bitcoin as an institutional asset" },
   { id: "ai-crypto", name: "AI and crypto" },
   { id: "prediction-markets", name: "Prediction markets" },
+  { id: "energy-compute", name: "Energy and data center compute" },
   { id: "privacy-health", name: "Privacy and digital identity in healthcare" },
 ] as const;
 
