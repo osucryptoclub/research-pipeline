@@ -1,4 +1,5 @@
 :root {
+  color-scheme: light; --ease: cubic-bezier(0.22, 1, 0.36, 1); --shadow: 0 6px 20px -8px rgb(23 24 28 / 0.18);
   --bg: #f5f3ee; --surface: #fffdf9; --fg: #17181c; --muted: #5b616d; --border: #e3dfd5;
   --accent: #1f4fd1; --hover: #efebe2; --error: #b00020; --mark: #fde68a; --mark-fg: #17181c;
   --t-stablecoins: #1a7f5a; --t-tokenization: #7a4fd1; --t-regulation: #c2410c;
@@ -8,6 +9,7 @@
 /* Dark colors apply when the system is dark (unless light was chosen) or when dark was chosen. */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
+    color-scheme: dark; --shadow: 0 8px 24px -10px rgb(0 0 0 / 0.6);
     --bg: #0f1114; --surface: #161a1f; --fg: #e9e7e1; --muted: #a0a6b0; --border: #2a2f37;
     --accent: #86a8ff; --hover: #1e232b; --error: #ff6b6b; --mark: #6b5513; --mark-fg: #fff7d6;
     --t-stablecoins: #4ade9d; --t-tokenization: #b794f6; --t-regulation: #fb923c;
@@ -16,6 +18,7 @@
   }
 }
 :root[data-theme="dark"] {
+    color-scheme: dark; --shadow: 0 8px 24px -10px rgb(0 0 0 / 0.6);
     --bg: #0f1114; --surface: #161a1f; --fg: #e9e7e1; --muted: #a0a6b0; --border: #2a2f37;
     --accent: #86a8ff; --hover: #1e232b; --error: #ff6b6b; --mark: #6b5513; --mark-fg: #fff7d6;
     --t-stablecoins: #4ade9d; --t-tokenization: #b794f6; --t-regulation: #fb923c;
@@ -24,9 +27,17 @@
 }
 
 * { box-sizing: border-box; }
-body { margin: 0; background: var(--bg); color: var(--fg);
-  font-family: system-ui, -apple-system, "Segoe UI", sans-serif; font-size: 15px; line-height: 1.5; }
+/* Keeps anchored and keyboard-scrolled content clear of the sticky search bar. */
+html { scroll-padding-top: 96px; scrollbar-color: var(--border) transparent; }
+body { margin: 0; background: var(--bg); color: var(--fg); caret-color: var(--accent);
+  font-family: var(--font-sans), system-ui, sans-serif; font-size: 15px; line-height: 1.5; }
+::selection { background: color-mix(in srgb, var(--accent) 28%, transparent); }
 a { color: inherit; }
+a, button, .item, .paper, .filter, .chip, .tag { transition: color 0.2s var(--ease), background-color 0.2s var(--ease),
+  border-color 0.2s var(--ease), box-shadow 0.25s var(--ease), opacity 0.2s var(--ease), transform 0.25s var(--ease); }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+/* Set briefly while the theme switches (see ThemeToggle), so every color changes at once instead of fading unevenly. */
+[data-theming] * { transition: none !important; }
 a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
 code { font-size: 0.85em; }
 mark { background: var(--mark); color: var(--mark-fg); border-radius: 2px; padding: 0 1px; }
@@ -49,8 +60,10 @@ mark { background: var(--mark); color: var(--mark-fg); border-radius: 2px; paddi
 .brand-mark { width: 18px; height: 18px; border-radius: 5px;
   background: linear-gradient(135deg, var(--t-energy-compute) 0 50%, var(--t-privacy-health) 50% 100%); }
 .sub { color: var(--muted); font-size: 0.8rem; }
-.theme-toggle { margin-left: auto; font: inherit; font-size: 0.8rem; cursor: pointer; color: var(--fg);
-  background: var(--bg); border: 1px solid var(--border); border-radius: 999px; padding: 3px 12px; }
+.theme-toggle { margin-left: auto; display: inline-flex; align-items: center; gap: 6px; font: inherit; font-size: 0.8rem;
+  cursor: pointer; color: var(--fg); background: var(--bg); border: 1px solid var(--border); border-radius: 999px;
+  padding: 4px 12px 4px 10px; }
+.theme-toggle svg { width: 14px; height: 14px; }
 .theme-toggle:hover { background: var(--hover); }
 
 .notice { width: calc(100% - 32px); max-width: 1168px; margin: 12px auto 0; padding: 7px 12px; font-size: 0.85rem; background: var(--surface);
@@ -68,9 +81,11 @@ mark { background: var(--mark); color: var(--mark-fg); border-radius: 2px; paddi
 
 .papers { display: grid; gap: 14px; margin-top: 26px; grid-template-columns: minmax(0, 1fr); }
 .paper { position: relative; background: var(--surface); border: 1px solid var(--border); border-radius: 14px;
-  overflow: hidden; transition: border-color 0.15s, box-shadow 0.15s; }
+  overflow: hidden; }
 .paper::before { content: ""; position: absolute; inset: 0 0 auto; height: 3px; background: var(--topic); }
 .paper:hover { border-color: color-mix(in srgb, var(--topic) 45%, var(--border)); }
+/* Only on real pointers: a tap on a phone would leave the card stuck lifted. */
+@media (hover: hover) { .paper:hover { box-shadow: var(--shadow); transform: translateY(-2px); } }
 .paper[data-active] { border-color: var(--topic); box-shadow: 0 0 0 1px var(--topic);
   background: color-mix(in srgb, var(--topic) 6%, var(--surface)); }
 .paper-link { display: block; padding: 18px 18px 12px; text-decoration: none; }
@@ -90,7 +105,10 @@ mark { background: var(--mark); color: var(--mark-fg); border-radius: 2px; paddi
 .paper-searches { display: flex; flex-wrap: wrap; gap: 6px; padding: 0 18px 16px; }
 .chip { font-size: 0.78rem; padding: 3px 10px; border-radius: 999px; text-decoration: none;
   border: 1px solid var(--border); background: var(--bg); color: var(--fg); }
-.chip::before { content: "⌕ "; color: var(--muted); }
+.chip { display: inline-flex; align-items: center; gap: 5px; }
+/* Same magnifier as the search box, drawn as a mask so it takes the text color. */
+.chip::before { content: ""; width: 11px; height: 11px; background: var(--muted);
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round'%3E%3Ccircle cx='8.5' cy='8.5' r='5.5'/%3E%3Cpath d='M13 13l4.5 4.5'/%3E%3C/svg%3E") center / contain no-repeat; }
 .chip:hover { border-color: var(--topic); }
 .chip[data-active] { border-color: var(--topic); background: color-mix(in srgb, var(--topic) 14%, var(--surface)); }
 
@@ -110,9 +128,10 @@ mark { background: var(--mark); color: var(--mark-fg); border-radius: 2px; paddi
 .search-icon { position: absolute; left: 30px; width: 18px; height: 18px; color: var(--muted); pointer-events: none; }
 .search input { width: 100%; padding: 13px 64px 13px 44px; font: inherit; font-size: 1rem; color: var(--fg);
   background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
-  box-shadow: 0 1px 2px rgb(0 0 0 / 0.04); }
-.search input::placeholder { color: var(--muted); opacity: 0.8; }
-.search input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.04); transition: border-color 0.2s var(--ease), box-shadow 0.25s var(--ease); }
+.search input::placeholder { color: var(--muted); }
+.search input:focus { outline: 2px solid transparent; border-color: var(--accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 22%, transparent), var(--shadow); }
 .search kbd, .search-status { position: absolute; right: 30px; font-size: 0.72rem; color: var(--muted); }
 .search kbd { border: 1px solid var(--border); border-radius: 4px; padding: 0 6px; font-family: inherit; }
 
@@ -146,7 +165,8 @@ mark { background: var(--mark); color: var(--mark-fg); border-radius: 2px; paddi
 .day { margin-top: 18px; }
 .day-heading { display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 10px; margin: 0 0 8px; font-size: 1rem; }
 .day-relative { font-size: 0.7rem; font-weight: 650; letter-spacing: 0.06em; text-transform: uppercase; padding: 2px 8px;
-  border-radius: 999px; background: var(--fg); color: var(--bg); align-self: center; }
+  border-radius: 999px; background: color-mix(in srgb, var(--accent) 12%, var(--surface)); color: var(--accent);
+  align-self: center; }
 .day-date { font-family: var(--font-serif), Georgia, serif; font-weight: 500; font-size: 1.3rem; letter-spacing: -0.01em; }
 .day-count { color: var(--muted); font-size: 0.8rem; }
 
@@ -195,7 +215,7 @@ mark { background: var(--mark); color: var(--mark-fg); border-radius: 2px; paddi
   .search kbd, .search-status { right: 48px; }
   .layout { grid-template-columns: 260px minmax(0, 1fr); gap: 32px; }
   .filters { position: sticky; top: 84px; align-self: start; gap: 22px; padding-top: 18px;
-    max-height: calc(100vh - 100px); overflow-y: auto; }
+    max-height: calc(100vh - 100px); overflow-y: auto; scrollbar-width: thin; }
   .filters section { flex-direction: column; align-items: stretch; overflow: visible; gap: 2px; }
   .filters-heading { margin: 0 0 6px 10px; }
   .filter { border: 0; border-radius: 8px; background: transparent; white-space: normal; padding: 6px 10px; }
