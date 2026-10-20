@@ -5,6 +5,20 @@ export type Group = { label: string; items: Item[] };
 const DAY = 24 * 60 * 60 * 1000;
 const LABELS = ["Today", "Yesterday", "This week", "Earlier", "Date unknown"] as const;
 
+// Same buckets as the result groups, so a date filter and a heading never disagree.
+export const AGE_FILTERS = [
+  { id: "today", label: "Today" },
+  { id: "yesterday", label: "Yesterday" },
+  { id: "week", label: "This week" },
+  { id: "earlier", label: "Earlier" },
+  { id: "undated", label: "Date unknown" },
+] as const;
+
+export function ageId(iso: string | null, now = Date.now()): string {
+  const label = labelFor(iso, now);
+  return AGE_FILTERS.find((a) => a.label === label)!.id;
+}
+
 function labelFor(iso: string | null, now: number): (typeof LABELS)[number] {
   if (!iso) return "Date unknown";
   const age = now - new Date(iso).getTime();
