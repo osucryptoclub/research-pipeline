@@ -1,11 +1,13 @@
 import Link from "next/link";
 import { FilterPanel } from "@/components/FilterPanel";
 import { ItemList } from "@/components/ItemList";
+import { Pagination } from "@/components/Pagination";
 import { PaperCards } from "@/components/PaperCards";
 import { SearchBox } from "@/components/SearchBox";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { groupByDay } from "@/lib/days";
-import { getLatestItems } from "@/lib/items";
+import { getItemsPage, getLatestItems } from "@/lib/items";
+import { pageLinks, parsePage } from "@/lib/pages";
 import { hrefFor, type Filters } from "@/lib/params";
 import { parseQuery, queryTerms } from "@/lib/search";
 import { parseSource, sourceName } from "@/lib/sources";
@@ -15,7 +17,7 @@ import { parseTopic, topicName } from "@/lib/topics";
 export const dynamic = "force-dynamic";
 
 type Param = string | string[] | undefined;
-type Props = { searchParams: Promise<{ topic?: Param; source?: Param; q?: Param }> };
+type Props = { searchParams: Promise<{ topic?: Param; source?: Param; q?: Param; page?: Param }> };
 
 export default async function Home({ searchParams }: Props) {
   const params = await searchParams;
@@ -24,11 +26,16 @@ export default async function Home({ searchParams }: Props) {
     source: parseSource(params.source),
     q: parseQuery(params.q),
   };
-  const { items, usingSample, error } = await getLatestItems(filters.q);
+  const page = parsePage(params.page);
+  // The newest items feed the paper cards and filter counts; the timeline shows one
+  // page of the items matching every filter, 50 at a time.
+  const [latest, timeline] = await Promise.all([getLatestItems(filters.q), getItemsPage(filters, page)]);
+  const { items, usingSample } = latest;
+  const error = latest.error ?? timeline.error;
+  const { pageCount } = pageLinks(timeline.total, page);
 
   const inTopic = (tags: string[]) => !filters.topic || tags.includes(filters.topic);
   const inSource = (id: string) => !filters.source || id === filters.source;
-  const visible = items.filter((i) => inTopic(i.tags) && inSource(i.source_id));
 
   // Each count respects the *other* filter, so it says what clicking it would show.
   const topicCounts: Record<string, number> = {};
@@ -79,8 +86,8 @@ export default async function Home({ searchParams }: Props) {
 
         <div className="summary-bar">
           <span className="result-count">
-            {visible.length} {visible.length === 1 ? "item" : "items"}
-            {!anyFilter && ` · newest ${items.length} loaded`}
+            {timeline.total} {timeline.total === 1 ? "item" : "items"}
+            {pageCount > 1 && page < pageCount && ` · page ${page + 1} of ${pageCount}`}
           </span>
           {filters.topic && (
             <ActiveChip label={topicName(filters.topic)} href={hrefFor(filters, { topic: null })} />
@@ -100,16 +107,21 @@ export default async function Home({ searchParams }: Props) {
           <FilterPanel filters={filters} topicCounts={topicCounts} sourceCounts={sourceCounts} />
           <main>
             {!error && (
-              <ItemList
-                groups={groupByDay(visible)}
-                filters={filters}
-                terms={terms}
-                emptyText={
-                  anyFilter
-                    ? "Nothing matches these filters. Try fewer words, or clear a filter above."
-                    : "No items collected yet."
-                }
-              />
+              <>
+                <ItemList
+                  groups={groupByDay(timeline.items)}
+                  filters={filters}
+                  terms={terms}
+                  emptyText={
+                    page >= pageCount
+                      ? "This page is past the oldest item. Go back to newer items below."
+                      : anyFilter
+                        ? "Nothing matches these filters. Try fewer words, or clear a filter above."
+                        : "No items collected yet."
+                  }
+                />
+                <Pagination filters={filters} page={page} total={timeline.total} />
+              </>
             )}
           </main>
         </div>
