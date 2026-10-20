@@ -94,7 +94,7 @@ def test_parse_missing_summary_is_none():
 def test_real_sec_feed_summaries_are_clean():
     # First 3 items of https://www.sec.gov/news/pressreleases.rss, saved Oct 14, 2026.
     # The SEC double-escapes entities (&amp;nbsp;), so feedparser alone leaves "&nbsp;".
-    items = parse((FIXTURES / "sec_press_releases.xml").read_text(), "sec-press-releases")
+    items = parse((FIXTURES / "sec_press_releases.xml").read_text(encoding="utf-8"), "sec-press-releases")
     assert len(items) == 3
     for item in items:
         assert item["summary"]
