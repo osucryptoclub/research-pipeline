@@ -143,6 +143,12 @@ mark { background: var(--mark); color: var(--mark-fg); border-radius: 2px; paddi
 
 /* Timeline of items, one section per day */
 .empty { padding: 32px 4px; color: var(--muted); }
+.pager { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin: 24px 0 8px;
+  padding-top: 16px; border-top: 1px solid var(--border); font-size: 0.9rem; }
+.pager a { color: var(--accent); padding: 6px 14px; border: 1px solid var(--border); border-radius: 999px;
+  background: var(--surface); text-decoration: none; }
+.pager a:hover { background: var(--hover); }
+.pager-where { color: var(--muted); font-variant-numeric: tabular-nums; }
 .day { margin-top: 18px; }
 .day-heading { display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 10px; margin: 0 0 8px; font-size: 1rem; }
 .day-relative { font-size: 0.7rem; font-weight: 650; letter-spacing: 0.06em; text-transform: uppercase; padding: 2px 8px;
