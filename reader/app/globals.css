@@ -112,7 +112,7 @@ mark { background: var(--mark); color: var(--mark-fg); border-radius: 2px; paddi
 .chip:hover { border-color: var(--topic); }
 .chip[data-active] { border-color: var(--topic); background: color-mix(in srgb, var(--topic) 14%, var(--surface)); }
 
-/* While searching or filtering by source, the intro shrinks so results stay near the top. */
+/* While filtering by source, the intro shrinks so results stay near the top. */
 .intro[data-compact] { padding-top: 18px; }
 .intro[data-compact] .eyebrow, .intro[data-compact] .lede, .intro[data-compact] h1,
 .intro[data-compact] .paper-covers, .intro[data-compact] .spark, .intro[data-compact] .paper-cta { display: none; }
@@ -143,7 +143,8 @@ mark { background: var(--mark); color: var(--mark-fg); border-radius: 2px; paddi
 .clear-all { color: var(--accent); font-size: 0.8rem; }
 
 /* Filters (a sidebar on wide screens, scrolling rows on phones) */
-.layout { display: grid; grid-template-columns: minmax(0, 1fr); gap: 8px; }
+/* At least a screen tall, so few results never shorten the page enough to scroll the sticky search box. */
+.layout { display: grid; grid-template-columns: minmax(0, 1fr); gap: 8px; min-height: 100vh; }
 .filters { display: flex; flex-direction: column; gap: 10px; padding: 8px 0; }
 .filters section { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; align-items: center; }
 .filters-heading { flex: 0 0 auto; margin: 0 4px 0 0; font-size: 0.7rem; font-weight: 650; letter-spacing: 0.06em;

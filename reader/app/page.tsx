@@ -39,7 +39,8 @@ export default async function Home({ searchParams }: Props) {
   }
 
   const terms = filters.q ? queryTerms(filters.q).include : [];
-  const narrowed = Boolean(filters.q || filters.source);
+  // Not on search: collapsing the intro while typing would move the search box out from under the cursor.
+  const narrowed = Boolean(filters.source);
   const anyFilter = Boolean(filters.q || filters.source || filters.topic);
 
   return (
