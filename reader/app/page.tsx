@@ -1,55 +1,144 @@
+import Link from "next/link";
+import { FilterPanel } from "@/components/FilterPanel";
 import { ItemList } from "@/components/ItemList";
+import { PaperCards } from "@/components/PaperCards";
+import { SearchBox } from "@/components/SearchBox";
 import { ThemeToggle } from "@/components/ThemeToggle";
-import { TopicNav } from "@/components/TopicNav";
-import { groupByAge } from "@/lib/groups";
+import { groupByDay } from "@/lib/days";
 import { getLatestItems } from "@/lib/items";
+import { hrefFor, type Filters } from "@/lib/params";
+import { parseQuery, queryTerms } from "@/lib/search";
+import { parseSource, sourceName } from "@/lib/sources";
 import { parseTopic, topicName } from "@/lib/topics";
 
 // Always fetch fresh data instead of building a static page.
 export const dynamic = "force-dynamic";
 
-type Props = { searchParams: Promise<{ topic?: string | string[] }> };
+type Param = string | string[] | undefined;
+type Props = { searchParams: Promise<{ topic?: Param; source?: Param; q?: Param }> };
 
 export default async function Home({ searchParams }: Props) {
-  const topic = parseTopic((await searchParams).topic);
-  const { items, usingSample, error } = await getLatestItems();
+  const params = await searchParams;
+  const filters: Filters = {
+    topic: parseTopic(params.topic),
+    source: parseSource(params.source),
+    q: parseQuery(params.q),
+  };
+  const { items, usingSample, error } = await getLatestItems(filters.q);
 
-  // Counts cover the latest items fetched, so they match what the page can show.
-  const counts: Record<string, number> = {};
+  const inTopic = (tags: string[]) => !filters.topic || tags.includes(filters.topic);
+  const inSource = (id: string) => !filters.source || id === filters.source;
+  const visible = items.filter((i) => inTopic(i.tags) && inSource(i.source_id));
+
+  // Each count respects the *other* filter, so it says what clicking it would show.
+  const topicCounts: Record<string, number> = {};
+  const sourceCounts: Record<string, number> = {};
   for (const item of items) {
-    for (const tag of item.tags) counts[tag] = (counts[tag] ?? 0) + 1;
+    if (inSource(item.source_id)) for (const t of item.tags) topicCounts[t] = (topicCounts[t] ?? 0) + 1;
+    if (inTopic(item.tags)) sourceCounts[item.source_id] = (sourceCounts[item.source_id] ?? 0) + 1;
   }
-  const visible = topic ? items.filter((i) => i.tags.includes(topic)) : items;
+
+  const terms = filters.q ? queryTerms(filters.q).include : [];
+  const narrowed = Boolean(filters.q || filters.source);
+  const anyFilter = Boolean(filters.q || filters.source || filters.topic);
 
   return (
     <>
       <header className="topbar">
-        <h1>Research Pipeline</h1>
-        <span className="sub">
-          {visible.length} of latest {items.length} items
-          {topic ? ` · ${topicName(topic)}` : ""}
-        </span>
+        <Link href="/" className="brand">
+          <span className="brand-mark" aria-hidden="true" />
+          <span>Research Pipeline</span>
+        </Link>
+        <span className="sub">OSU Crypto Club · collected daily at 7:17am ET</span>
         <ThemeToggle />
       </header>
 
       {usingSample && (
         <p className="notice">
-          Showing sample data. Set up <code>reader/.env.local</code> to connect the real database.
+          Showing sample data, not the live archive. Set up <code>reader/.env.local</code> to connect the real
+          database.
         </p>
       )}
       {error && <p className="notice error">Couldn&apos;t load items: {error}</p>}
 
-      <div className="layout">
-        <TopicNav active={topic} counts={counts} total={items.length} />
-        <main>
-          {!error && (
-            <ItemList
-              groups={groupByAge(visible)}
-              emptyText={topic ? "No items for this topic in the latest items." : "No items collected yet."}
-            />
+      <section className="intro" data-compact={narrowed || undefined}>
+        <p className="eyebrow">For the University Blockchain Conference · Austin</p>
+        <h1>
+          Two papers. <em>One archive that remembers.</em>
+        </h1>
+        <p className="lede">
+          Every morning this collects from sources Research approved and keeps all of it, so you can see what was
+          said, by whom, and when. Nothing here is written by AI: each title and summary is exactly what the source
+          published, and every item links to the original so you can cite it.
+        </p>
+        <PaperCards items={items} filters={filters} />
+      </section>
+
+      <div className="workspace">
+        <SearchBox filters={filters} />
+
+        <div className="summary-bar">
+          <span className="result-count">
+            {visible.length} {visible.length === 1 ? "item" : "items"}
+            {!anyFilter && ` · newest ${items.length} loaded`}
+          </span>
+          {filters.topic && (
+            <ActiveChip label={topicName(filters.topic)} href={hrefFor(filters, { topic: null })} />
           )}
-        </main>
+          {filters.source && (
+            <ActiveChip label={sourceName(filters.source)} href={hrefFor(filters, { source: null })} />
+          )}
+          {filters.q && <ActiveChip label={`“${filters.q}”`} href={hrefFor(filters, { q: null })} />}
+          {anyFilter && (
+            <Link href="/" className="clear-all" scroll={false}>
+              Clear all
+            </Link>
+          )}
+        </div>
+
+        <div className="layout">
+          <FilterPanel filters={filters} topicCounts={topicCounts} sourceCounts={sourceCounts} />
+          <main>
+            {!error && (
+              <ItemList
+                groups={groupByDay(visible)}
+                filters={filters}
+                terms={terms}
+                emptyText={
+                  anyFilter
+                    ? "Nothing matches these filters. Try fewer words, or clear a filter above."
+                    : "No items collected yet."
+                }
+              />
+            )}
+          </main>
+        </div>
       </div>
+
+      <footer className="footer">
+        <div>
+          <h2>Collected every day</h2>
+          <p>
+            News can&apos;t be collected after the fact, so the archive grows daily and nothing is ever deleted.
+          </p>
+        </div>
+        <div>
+          <h2>Sources Research chose</h2>
+          <p>Regulators, federal agencies, standards bodies, and researchers. Research approves every source.</p>
+        </div>
+        <div>
+          <h2>Cite the original</h2>
+          <p>Figures and quotes come from the source itself. Open the link and cite it, not this page.</p>
+        </div>
+      </footer>
     </>
+  );
+}
+
+function ActiveChip({ label, href }: { label: string; href: string }) {
+  return (
+    <Link href={href} className="active-chip" scroll={false} aria-label={`Remove filter: ${label}`}>
+      {label} <span aria-hidden="true">×</span>
+    </Link>
   );
 }

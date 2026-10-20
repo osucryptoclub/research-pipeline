@@ -1,69 +1,610 @@
 [
   {
     "id": 1,
-    "source_id": "sample",
-    "url": "https://example.com/sample-1",
-    "title": "Sample item: this is placeholder data",
-    "summary": "You're seeing this because NEXT_PUBLIC_SUPABASE_URL isn't set. Once the club database is connected, real collected items replace these.",
-    "published_at": "2026-10-06T12:00:00Z",
+    "source_id": "smart-health-it",
+    "url": "https://smarthealthit.org/2026/10/smart-health-it-comments-on-fda-discussion-paper-on-generative-ai-enabled-medical-devices/?utm_source=rss&utm_medium=rss&utm_campaign=smart-health-it-comments-on-fda-discussion-paper-on-generative-ai-enabled-medical-devices",
+    "title": "SMART Health IT Comments on FDA Discussion Paper on Generative AI-Enabled Medical Devices",
+    "summary": "SMART Health ITComputational Health Informatics ProgramBoston Children’s Hospital October 19, 2026 Re: Docket No. FDA-2026-N-7874, Considerations for the Regulation of Generative AI-Enabled Medical Devices: Discussion Paper and Request for Feedback Submitted on behalf of the SMART Health IT team (the team that originated and maintains the SMART on FHIR ecosystem) Dear CDRH and Digital Health … Continue reading \"SMART Health IT Comments on FDA Discussion Paper on Generative AI-Enabled Medical Devices\" The post SMART Health IT Comments on FDA Discussion Paper on Generative AI-Enabled Medical Devices appeared first on SMART Health IT.",
+    "published_at": "2026-10-19T18:02:08+00:00",
     "tags": [
-      "stablecoins",
+      "privacy-health",
       "regulation"
     ]
   },
   {
     "id": 2,
-    "source_id": "sample",
-    "url": "https://example.com/sample-2",
-    "title": "Sample item: tokenized treasury fund update",
-    "summary": "Placeholder text so the Reader team can build the layout before real data arrives.",
-    "published_at": "2026-10-05T15:30:00Z",
+    "source_id": "data-center-frontier",
+    "url": "https://www.datacenterfrontier.com/hyperscale/article/55411657/beyond-colossus-5c-advances-575m-memphis-ai-factory-expansion",
+    "title": "Beyond Colossus: 5C Advances $575M Memphis AI Factory Expansion",
+    "summary": "At a former Fred's distribution complex, 5C Data Centers is pursuing a major AI infrastructure buildout, with plans to expand available power from 20 MW to 84 MW using fuel cells as Memphis weighs new restrictions on data center development.",
+    "published_at": "2026-10-19T17:39:37+00:00",
     "tags": [
-      "tokenization"
+      "energy-compute"
     ]
   },
   {
     "id": 3,
-    "source_id": "sample",
-    "url": "https://example.com/sample-3",
-    "title": "Sample item: an item with no tags",
-    "summary": null,
-    "published_at": null,
-    "tags": []
-  },
-  {
-    "id": 4,
-    "source_id": "sample",
-    "url": "https://example.com/sample-4",
-    "title": "Sample item: a deliberately long title to check that wrapping stays tidy on a 375px wide phone screen and on desktop",
-    "summary": "Placeholder text. Summaries are clamped to two lines in the list so long ones never push other rows off the screen, which keeps scanning fast even when a source publishes lengthy abstracts.",
-    "published_at": "2026-10-04T09:00:00Z",
+    "source_id": "sec-press-releases",
+    "url": "https://www.sec.gov/newsroom/press-releases/2026-106-sec-announces-roundtable-machine-understandable-data-age-super-intelligence",
+    "title": "SEC Announces Roundtable on Machine-Understandable Data in the Age of Super Intelligence",
+    "summary": "The Securities and Exchange Commission announced today that it will host a roundtable on November 9, 2026, to discuss the use of machine-understandable data and Super Intelligence (SI) and related risks and costs.“In the age of SI, high-quality…",
+    "published_at": "2026-10-19T17:19:43+00:00",
     "tags": [
-      "bitcoin-institutional",
       "regulation"
     ]
   },
   {
-    "id": 5,
-    "source_id": "sample",
-    "url": "https://example.com/sample-5",
-    "title": "Sample item: agent payments pilot",
-    "summary": "Placeholder text for the AI and crypto topic.",
-    "published_at": "2026-10-03T18:00:00Z",
+    "id": 4,
+    "source_id": "latitude-media",
+    "url": "https://www.latitudemedia.com/news/the-case-for-combining-lithium-ion-and-ldes/",
+    "title": "The case for combining lithium-ion and LDES",
+    "summary": "An MN8 project with Google as an offtaker pairs lithium-ion and a more novel chemistry. The post The case for combining lithium-ion and LDES appeared first on Latitude Media.",
+    "published_at": "2026-10-19T14:41:03+00:00",
     "tags": [
-      "ai-crypto",
-      "stablecoins"
+      "energy-compute"
+    ]
+  },
+  {
+    "id": 5,
+    "source_id": "us-doe-news",
+    "url": "https://www.energy.gov/articles/energy-department-advances-constitution-pipeline-project-42-million-defense-production-act",
+    "title": "Energy Department Advances Constitution Pipeline Project with $42 Million in Defense Production Act Funding",
+    "summary": "The U.S. Department of Energy announced today that it will use up to $42 million in Defense Production Act Title III funding to advance the development of a proposed 125-mile natural gas pipeline from Pennsylvania to New York.",
+    "published_at": "2026-10-19T14:33:00+00:00",
+    "tags": [
+      "energy-compute"
     ]
   },
   {
     "id": 6,
-    "source_id": "sample",
-    "url": "https://example.com/sample-6",
-    "title": "Sample item: event contract market update",
-    "summary": "Placeholder text for the prediction markets topic.",
-    "published_at": "2026-10-02T11:00:00Z",
+    "source_id": "energy-institute-haas",
+    "url": "https://energyathaas.wordpress.com/2026/10/19/when-monopoly-comes-naturally/",
+    "title": "When Monopoly Comes Naturally",
+    "summary": "Understanding why we regulate electricity distribution systems is key to regulating them well. What if your city had two water utilities? Not dividing up the area into two sub-regions, but … Continue Reading When Monopoly Comes Naturally",
+    "published_at": "2026-10-19T14:12:54+00:00",
     "tags": [
-      "prediction-markets"
+      "energy-compute"
+    ]
+  },
+  {
+    "id": 7,
+    "source_id": "eia-today-in-energy",
+    "url": "https://www.eia.gov/todayinenergy/detail.php?id=68325",
+    "title": "Hybrid sales rise while battery electric sales remain lower after tax credit expiration",
+    "summary": "In the third quarter of 2026 (3Q26), 23% of new light-duty vehicles sold in the United States were hybrid electric, battery electric, or plug-in hybrid electric vehicles, down slightly from 24% in 3Q25. Between 3Q25 and 3Q26, hybrid electric vehicles continued to gain market share, reaching 16% of light-duty vehicle sales. Growth of hybrid electric vehicle sales has slowed this quarter as the average transaction price for a new vehicle passed $50,000-the first time this price has been reached so far this year, according to Kelley Blue Book.",
+    "published_at": "2026-10-19T14:00:00+00:00",
+    "tags": [
+      "energy-compute"
+    ]
+  },
+  {
+    "id": 8,
+    "source_id": "latitude-media",
+    "url": "https://www.latitudemedia.com/news/have-we-reached-a-distributed-energy-turning-point/",
+    "title": "Have we reached a distributed energy turning point?",
+    "summary": "The first Flex Summit saw new hope for VPPs, as well as a reckoning with the market's persistent challenges. The post Have we reached a distributed energy turning point? appeared first on Latitude Media.",
+    "published_at": "2026-10-16T23:59:37+00:00",
+    "tags": [
+      "energy-compute"
+    ]
+  },
+  {
+    "id": 9,
+    "source_id": "data-center-frontier",
+    "url": "https://www.datacenterfrontier.com/sustainability/article/55412461/dcf-global-the-nordics-ai-boom-meets-the-power-test",
+    "title": "DCF Global: The Nordics' AI Boom Meets the Power Test",
+    "summary": "From Finland's multigigawatt development pipeline to major AI investments in Sweden and Norway, the Nordic countries are emerging as some of the world's most closely watched data center markets. But the region's advantages in clean energy, industrial infrastructure and sustainability are facing new tests from grid constraints, regulatory changes and the realities of delivering AI capacity at scale.",
+    "published_at": "2026-10-16T16:49:38+00:00",
+    "tags": [
+      "energy-compute"
+    ]
+  },
+  {
+    "id": 10,
+    "source_id": "us-doe-news",
+    "url": "https://www.energy.gov/articles/energy-department-announces-virginia-and-west-virginia-transmission-project-receive",
+    "title": "Energy Department Announces Virginia and West Virginia Transmission Project to Receive Defense Production Act Funding, Strengthening National Security and Grid Reliability",
+    "summary": "The U.S. Department of Energy today announced its intent to deploy Defense Production Act (DPA) funding to accelerate the expansion of transmission capacity in Virginia and West Virginia, strengthening grid reliability and infrastructure essential to national defense.",
+    "published_at": "2026-10-16T15:33:00+00:00",
+    "tags": [
+      "energy-compute"
+    ]
+  },
+  {
+    "id": 11,
+    "source_id": "latitude-media",
+    "url": "https://www.latitudemedia.com/news/sunrun-residential-vpps-for-data-centers-are-nearing-reality/",
+    "title": "Sunrun: Residential VPPs for data centers are nearing reality",
+    "summary": "In June, Sunrun, Tesla, and Everyday Electric pitched “capacity as a solution” for hyperscalers. Now, talks are underway. The post Sunrun: Residential VPPs for data centers are nearing reality appeared first on Latitude Media.",
+    "published_at": "2026-10-16T15:22:11+00:00",
+    "tags": [
+      "energy-compute"
+    ]
+  },
+  {
+    "id": 12,
+    "source_id": "eia-today-in-energy",
+    "url": "https://www.eia.gov/todayinenergy/detail.php?id=68324",
+    "title": "U.S. small-scale solar generation has quadrupled in the last decade",
+    "summary": "We estimate that U.S. generation from small-scale or rooftop solar photovoltaic systems (smaller than 1 megawatt of capacity) has increased from 18,812 gigawatthours (GWh) to 92,979 GWh over the last decade. The four states with the highest generation of small-scale solar in the country-California, Arizona, Texas, and Florida-are in regions with more abundant solar resources. Even though it is in a region with lower solar resources, New York ranks as the fifth-largest rooftop solar generation producer as a result of capacity growth supported by technology improvements and state incentives.",
+    "published_at": "2026-10-16T14:00:00+00:00",
+    "tags": [
+      "energy-compute"
+    ]
+  },
+  {
+    "id": 13,
+    "source_id": "latitude-media",
+    "url": "https://www.latitudemedia.com/news/how-permitting-reform-could-boost-vpps/",
+    "title": "How permitting reform could boost VPPs",
+    "summary": "At Flex Summit, “cautious optimism” about the bipartisan bill’s potential impact — and a call to action for the industry. The post How permitting reform could boost VPPs appeared first on Latitude Media.",
+    "published_at": "2026-10-16T12:15:04+00:00",
+    "tags": [
+      "energy-compute"
+    ]
+  },
+  {
+    "id": 14,
+    "source_id": "latitude-media",
+    "url": "https://www.latitudemedia.com/news/what-californias-grid-utilization-move-says-about-energy-affordability/",
+    "title": "What California’s grid utilization move says about energy affordability",
+    "summary": "Like Virginia’s, the state's law aims to curb rising power bills through grid efficiency and DERs — but via a different approach. The post What California’s grid utilization move says about energy affordability appeared first on Latitude Media.",
+    "published_at": "2026-10-15T22:50:23+00:00",
+    "tags": [
+      "energy-compute"
+    ]
+  },
+  {
+    "id": 15,
+    "source_id": "data-center-frontier",
+    "url": "https://www.datacenterfrontier.com/machine-learning/article/55412214/ocp-2026-ai-infrastructure-moves-from-scaling-to-coordination",
+    "title": "OCP 2026: AI Infrastructure Moves From Scaling to Coordination",
+    "summary": "Microsoft's custom silicon roadmap, Oracle's call for grid-interface standards, and Google's push for AI-driven systems design highlight an industry increasingly focused on integrating the entire AI factory.",
+    "published_at": "2026-10-15T20:42:31+00:00",
+    "tags": [
+      "energy-compute"
+    ]
+  },
+  {
+    "id": 16,
+    "source_id": "directtrust",
+    "url": "https://directtrust.org/blog/modernized-direct-implementation-for-the-cloud-and-the-next-generation-of-direct-workflows-part-3-what-to-expect-from-the-updated-xd-stack-and-the-roles-of-policy-documentation-and-futureproofing/​",
+    "title": "Modernized Direct Implementation for the Cloud and the Next Generation of Direct Workflows Part 3: What to Expect from the Updated XD Stack, and the Roles of Policy, Documentation, and Futureproofing",
+    "summary": "By Greg Meyer, Senior Director of Development and Infrastructure In Part 1 of this blog series, we looked at why Direct still matters and how emerging workflows such as 360X and the Metadata and Payloads (MaP) Framework are expanding what it can support. In Part 2, we turned to the infrastructure behind those use [...] The post Modernized Direct Implementation for the Cloud and the Next Generation of Direct Workflows Part 3: What to Expect from the Updated XD Stack, and the Roles of Policy, Documentation, and Futureproofing appeared first on DirectTrust.",
+    "published_at": "2026-10-15T15:26:47+00:00",
+    "tags": [
+      "privacy-health"
+    ]
+  },
+  {
+    "id": 17,
+    "source_id": "eia-today-in-energy",
+    "url": "https://www.eia.gov/todayinenergy/detail.php?id=68305",
+    "title": "PJM, ERCOT, and SWPP all set peak load records this summer",
+    "summary": "Three regional transmission organizations (RTOs) set records for peak hourly load this past summer, according to data reported on Form EIA-930 and presented in the Hourly Electric Grid Monitor.",
+    "published_at": "2026-10-15T14:00:00+00:00",
+    "tags": [
+      "energy-compute"
+    ]
+  },
+  {
+    "id": 18,
+    "source_id": "data-center-frontier",
+    "url": "https://www.datacenterfrontier.com/site-selection/article/55409955/virginias-new-data-center-bargain-power-permits-and-the-right-to-build",
+    "title": "Virginia’s New Data Center Bargain: Power, Permits and the Right to Build",
+    "summary": "From utility-rate reforms and rising infrastructure costs to local zoning battles and contested development rights, Virginia is rewriting the terms of data center growth—shifting more risk to developers while testing its ability to sustain the AI infrastructure boom.",
+    "published_at": "2026-10-14T16:56:09+00:00",
+    "tags": [
+      "energy-compute"
+    ]
+  },
+  {
+    "id": 19,
+    "source_id": "us-doe-news",
+    "url": "https://www.energy.gov/articles/energy-department-releases-emissions-value-request-process-45z-fuel-production-credit",
+    "title": "Energy Department Releases Emissions Value Request Process for 45Z Fuel Production Credit",
+    "summary": "The U.S. Department of Energy Alternative Fuels and Feedstocks Office released a pre-publication draft of a federal register notice announcing the Emissions Value Request process for the 45Z fuel production tax credit.",
+    "published_at": "2026-10-14T15:10:00+00:00",
+    "tags": [
+      "energy-compute"
+    ]
+  },
+  {
+    "id": 20,
+    "source_id": "sec-press-releases",
+    "url": "https://www.sec.gov/newsroom/press-releases/2026-105-sec-small-business-advisory-committee-discuss-ipo-modernization-regulation-crowdfunding",
+    "title": "SEC Small Business Advisory Committee to Discuss IPO Modernization and Regulation Crowdfunding",
+    "summary": "The Securities and Exchange Commission’s Small Business Capital Formation Advisory Committee announced that it will hold a meeting on Tuesday, October 27, 2026, at 10 a.m. to continue discussing IPO modernization and explore potential policy…",
+    "published_at": "2026-10-14T14:30:47+00:00",
+    "tags": [
+      "regulation"
+    ]
+  },
+  {
+    "id": 21,
+    "source_id": "eia-today-in-energy",
+    "url": "https://www.eia.gov/todayinenergy/detail.php?id=68304",
+    "title": "Monthly wind generation in ISO-NE is about 68% higher than last year",
+    "summary": "Monthly wind generation in the first nine months of 2026 was an average of 68% higher compared with the same period in 2025 in ISO New England (ISO-NE).",
+    "published_at": "2026-10-14T14:00:00+00:00",
+    "tags": [
+      "energy-compute"
+    ]
+  },
+  {
+    "id": 22,
+    "source_id": "us-doe-news",
+    "url": "https://www.energy.gov/articles/energy-department-backs-major-grid-expansion-across-eight-states-strengthen-reliability",
+    "title": "Energy Department Backs Major Grid Expansion Across Eight States to Strengthen Reliability and Lower Electricity Costs",
+    "summary": "The Energy Department Announces Intention to Support Adding 2.5 GW of Grid Capacity and 800 Jobs",
+    "published_at": "2026-10-13T19:41:00+00:00",
+    "tags": [
+      "energy-compute"
+    ]
+  },
+  {
+    "id": 23,
+    "source_id": "data-center-frontier",
+    "url": "https://www.datacenterfrontier.com/hyperscale/article/55411534/ocp-2026-agentic-ai-pushes-the-data-center-from-chip-to-grid",
+    "title": "OCP 2026: Agentic AI Drives the Data Center's Chip-to-Grid Transformation",
+    "summary": "At the Open Compute Project Global Summit, AMD, Meta, Arm, Broadcom and NVIDIA outlined a sweeping transformation of AI infrastructure, from CPU-intensive agentic computing and open rack architectures to gigawatt-scale construction, optical networking and utility-grid integration.",
+    "published_at": "2026-10-13T17:38:29+00:00",
+    "tags": [
+      "ai-crypto",
+      "energy-compute"
+    ]
+  },
+  {
+    "id": 24,
+    "source_id": "us-doe-news",
+    "url": "https://www.energy.gov/articles/energy-department-announces-2026-ernest-orlando-lawrence-award-winners",
+    "title": "Energy Department Announces 2026 Ernest Orlando Lawrence Award Winners",
+    "summary": "U.S. Secretary of Energy Chris Wright today announced nine recipients of the prestigious Ernest Orlando Lawrence Award for their exceptional contributions to research and development supporting the U.S. Department of Energy’s missions in science, energy, and national security.",
+    "published_at": "2026-10-13T16:35:59+00:00",
+    "tags": [
+      "energy-compute"
+    ]
+  },
+  {
+    "id": 25,
+    "source_id": "energy-institute-haas",
+    "url": "https://energyathaas.wordpress.com/2026/10/12/pain-at-the-pump-130-billion-and-counting/",
+    "title": "Pain at the Pump: $130 Billion and Counting",
+    "summary": "According to Brown University’s Iran War Energy Cost Tracker (IWECT), increased fuel costs for U.S. consumers since the beginning of the Iran war now exceed $130 billion, equivalent to more than $1,000 on average per household.",
+    "published_at": "2026-10-12T14:24:35+00:00",
+    "tags": [
+      "energy-compute"
+    ]
+  },
+  {
+    "id": 26,
+    "source_id": "sec-press-releases",
+    "url": "https://www.sec.gov/newsroom/press-releases/2026-104-sec-proposes-expanding-securities-eligible-cross-trading-registered-funds",
+    "title": "SEC Proposes Expanding Securities Eligible for Cross Trading by Registered Funds",
+    "summary": "The Securities and Exchange Commission today proposed amendments to the Investment Company Act “cross-trading rule,” which permits transactions in securities between a registered fund and its affiliates under certain conditions. The proposed amendments…",
+    "published_at": "2026-10-09T14:59:00+00:00",
+    "tags": [
+      "regulation"
+    ]
+  },
+  {
+    "id": 27,
+    "source_id": "w3c-verifiable-credentials",
+    "url": "https://www.w3.org/news/2026/first-draft-notes-verifiable-credential-threat-models/",
+    "title": "First Draft Notes: Verifiable Credential Threat Models",
+    "summary": "The Verifiable Credentials Working Group has published a series of W3C Working Group Note Drafts for threat models.",
+    "published_at": "2026-10-08T08:32:00+00:00",
+    "tags": [
+      "privacy-health"
+    ]
+  },
+  {
+    "id": 28,
+    "source_id": "w3c-verifiable-credentials",
+    "url": "https://www.w3.org/news/2026/w3c-issues-press-release-about-developing-verifiable-credential-barcodes/",
+    "title": "W3C issues press release about developing Verifiable Credential Barcodes",
+    "summary": "In a press release we present the concept of real-time revocation that is being developed in the W3C Verifiable Credentials Barcodes specification to protect physical documents.",
+    "published_at": "2026-10-07T17:50:00+00:00",
+    "tags": [
+      "privacy-health"
+    ]
+  },
+  {
+    "id": 29,
+    "source_id": "w3c-verifiable-credentials",
+    "url": "https://www.w3.org/press-releases/2026/data-breaches-identity-theft-and-revocation-a-real-world-case-study-on-why-w3c-is-developing-verifiable-credential-barcodes/",
+    "title": "Data breaches, identity theft, and revocation: a real-world case study on why W3C is developing Verifiable Credential Barcodes",
+    "summary": "In September 2026, journalists reported what may be one of the largest breaches of government-issued identity documents in history. Cybercrime enables document fraud at an unprecedented scale, and cryptographic security on physical documents in the form of digital signatures is not enough. Real-time revocation is needed to protect individuals against identity theft. W3C Verifiable Credential Barcodes could be one solution - and the technology is open and free for all to use.",
+    "published_at": "2026-10-07T17:15:00+00:00",
+    "tags": [
+      "privacy-health"
+    ]
+  },
+  {
+    "id": 30,
+    "source_id": "sec-press-releases",
+    "url": "https://www.sec.gov/newsroom/press-releases/2026-103-sec-seeks-final-judgment-against-former-western-asset-co-cio-ken-leech-cherry-picking-case",
+    "title": "SEC Seeks Final Judgment Against Former Western Asset Co-CIO Ken Leech in Cherry Picking Case",
+    "summary": "The Securities and Exchange Commission today moved for entry of a final judgment by consent against Stephen Kenneth Leech II, the former co-chief investment officer of registered investment adviser Western Asset Management Company LLC, whom the SEC…",
+    "published_at": "2026-10-06T20:30:24+00:00",
+    "tags": [
+      "regulation"
+    ]
+  },
+  {
+    "id": 31,
+    "source_id": "sec-press-releases",
+    "url": "https://www.sec.gov/newsroom/press-releases/2026-102-sec-host-virtual-national-compliance-outreach-seminar-investment-companies-investment-advisers",
+    "title": "SEC to Host Virtual National Compliance Outreach Seminar for Investment Companies and Investment Advisers",
+    "summary": "The Securities and Exchange Commission’s Compliance Outreach Program announced today that it will host a virtual national seminar for investment companies and investment advisers on November 19, 2026. The purpose of the event is to help chief compliance…",
+    "published_at": "2026-10-06T14:37:55+00:00",
+    "tags": [
+      "regulation"
+    ]
+  },
+  {
+    "id": 32,
+    "source_id": "energy-institute-haas",
+    "url": "https://energyathaas.wordpress.com/2026/10/05/buying-time-burning-gas/",
+    "title": "Buying Time, Burning Gas",
+    "summary": "Why AI companies are paying a premium to go off the grid (and what this costs the rest of us). The race is on to train the next generation of … Continue Reading Buying Time, Burning Gas",
+    "published_at": "2026-10-05T13:37:37+00:00",
+    "tags": [
+      "energy-compute"
+    ]
+  },
+  {
+    "id": 33,
+    "source_id": "directtrust",
+    "url": "https://directtrust.org/blog/modernized-direct-implementation-for-the-cloud-and-the-next-generation-of-direct-workflows-part-2-addressing-old-pain-points-and-why-modernization-matters/​",
+    "title": "Modernized Direct Implementation for the Cloud and the Next Generation of Direct Workflows Part 2: Addressing Old Pain Points and Why Modernization Matters",
+    "summary": "By Greg Meyer, Senior Director of Development and Infrastructure In the first blog of this series, we examined the history of Direct, why it still matters, and how emerging workflows such as 360X and the Metadata and Payloads (MaP) Framework are expanding what it can support. As those use cases grow, the infrastructure behind [...] The post Modernized Direct Implementation for the Cloud and the Next Generation of Direct Workflows Part 2: Addressing Old Pain Points and Why Modernization Matters appeared first on DirectTrust.",
+    "published_at": "2026-10-05T11:00:03+00:00",
+    "tags": [
+      "privacy-health"
+    ]
+  },
+  {
+    "id": 34,
+    "source_id": "directtrust",
+    "url": "https://directtrust.org/blog/civitas-2026-annual-conference-connecting-communities-through-trust-and-interoperability/​",
+    "title": "Civitas 2026 Annual Conference: Connecting Communities Through Trust and Interoperability",
+    "summary": "By Taylor Davis, Standards Lead and Secretariat, Community Coordinator Last week, I had the opportunity to attend the 2026 Civitas Networks for Health Annual Conference, which brought together leaders from across healthcare, health information exchange, social care, public health, technology, and policy. As a member of the Civitas Emerging Leaders Council, it was also [...] The post Civitas 2026 Annual Conference: Connecting Communities Through Trust and Interoperability appeared first on DirectTrust.",
+    "published_at": "2026-10-01T16:17:21+00:00",
+    "tags": [
+      "privacy-health"
+    ]
+  },
+  {
+    "id": 35,
+    "source_id": "astp-onc-health-it-blog",
+    "url": "https://healthit.gov/blog/interoperability/less-pajama-time-more-patient-time-how-better-interoperability-can-reduce-physician-burden/",
+    "title": "Less Pajama Time, More Patient Time: How Better Interoperability Can Reduce Physician Burden",
+    "summary": "At ONC, we are not advancing data liquidity as an abstract technology project. We are […] The post Less Pajama Time, More Patient Time: How Better Interoperability Can Reduce Physician Burden appeared first on ONC Blog.",
+    "published_at": "2026-09-30T15:50:09+00:00",
+    "tags": [
+      "privacy-health"
+    ]
+  },
+  {
+    "id": 36,
+    "source_id": "astp-onc-health-it-blog",
+    "url": "https://healthit.gov/blog/health-data/from-immediate-access-to-meaningful-delivery-a-patient-centered-approach-to-delivering-test-results/",
+    "title": "From Immediate Access to Meaningful Delivery: A Patient-Centered Approach to Delivering Test Results",
+    "summary": "A recent ONC-led study found that most patients now view their test results in a […] The post From Immediate Access to Meaningful Delivery: A Patient-Centered Approach to Delivering Test Results appeared first on ONC Blog.",
+    "published_at": "2026-09-30T15:50:00+00:00",
+    "tags": [
+      "privacy-health"
+    ]
+  },
+  {
+    "id": 37,
+    "source_id": "sequoia-project",
+    "url": "https://sequoiaproject.org/the-last-mile-of-health-data-access/",
+    "title": "The Last Mile of Health Data Access",
+    "summary": "By Anna McCollister, Interoperability Matters Consumer Engagement Strategy Workgroup Lead The Sequoia Project launched the Consumer Engagement Strategy Workgroup with a singular mission: reduce patient administrative burden by making it […] The post The Last Mile of Health Data Access appeared first on The Sequoia Project.",
+    "published_at": "2026-09-28T13:15:03+00:00",
+    "tags": [
+      "privacy-health"
+    ]
+  },
+  {
+    "id": 38,
+    "source_id": "energy-institute-haas",
+    "url": "https://energyathaas.wordpress.com/2026/09/28/satans-buzzsaw/",
+    "title": "Satan’s Buzzsaw",
+    "summary": "Does a data center in your neighborhood make your house worthless? Like most people, I have a few rules in my life that keep me sane. Like “choose the route … Continue Reading Satan’s Buzzsaw",
+    "published_at": "2026-09-28T08:01:00+00:00",
+    "tags": [
+      "energy-compute"
+    ]
+  },
+  {
+    "id": 39,
+    "source_id": "w3c-verifiable-credentials",
+    "url": "https://www.w3.org/news/2026/first-public-working-draft-bitstring-status-list-v1-1/",
+    "title": "First Public Working Draft: Bitstring Status List v1.1",
+    "summary": "This specification describes a privacy-preserving, space-efficient, and high-performance mechanism for publishing status information such as suspension or revocation of Verifiable Credentials through use of bitstrings.",
+    "published_at": "2026-09-24T08:28:00+00:00",
+    "tags": [
+      "privacy-health"
+    ]
+  },
+  {
+    "id": 40,
+    "source_id": "w3c-verifiable-credentials",
+    "url": "https://www.w3.org/news/2026/group-note-draft-verifiable-credentials-data-model-threat-model-v2-1/",
+    "title": "Group Note Draft: Verifiable Credentials Data Model Threat Model v2.1",
+    "summary": "This document describes a threat model for the Verifiable Credentials Data Model specification.",
+    "published_at": "2026-09-24T08:12:00+00:00",
+    "tags": [
+      "privacy-health"
+    ]
+  },
+  {
+    "id": 41,
+    "source_id": "directtrust",
+    "url": "https://directtrust.org/blog/modernized-direct-implementation-for-the-cloud-and-the-next-generation-of-direct-workflows-part1/​",
+    "title": "Modernized Direct Implementation for the Cloud and the Next Generation of Direct Workflows – Part 1: The Role of Direct and Setting the Stage for Updated Implementations",
+    "summary": "By Greg Meyer, Senior Director of Development and Infrastructure A Quick Trip Down Memory Lane The Direct Project is old enough to drive. Created in 2010 under its original name, NHIN Direct, the project was born out of the idea that if we want providers to actually exchange health information, maybe we should stop [...] The post Modernized Direct Implementation for the Cloud and the Next Generation of Direct Workflows – Part 1: The Role of Direct and Setting the Stage for Updated Implementations appeared first on DirectTrust.",
+    "published_at": "2026-09-22T11:00:08+00:00",
+    "tags": [
+      "privacy-health"
+    ]
+  },
+  {
+    "id": 42,
+    "source_id": "sequoia-project",
+    "url": "https://sequoiaproject.org/beyond-compliance-how-p2p-capabilities-become-competitive-advantages/",
+    "title": "Beyond Compliance: How P2P Capabilities Become Competitive Advantages",
+    "summary": "Final Part of ‘Unlocking the Payer-to-Payer Shift: Compliance, Collaboration, and Competitive Edge,’ A 5-Part Blog Series By Jim Adamson, Senior Consultant at Point-of-Care Partners and Interoperability Matters Payer-to-Payer Workgroup Lead […] The post Beyond Compliance: How P2P Capabilities Become Competitive Advantages appeared first on The Sequoia Project.",
+    "published_at": "2026-09-21T14:42:11+00:00",
+    "tags": [
+      "privacy-health"
+    ]
+  },
+  {
+    "id": 43,
+    "source_id": "energy-institute-haas",
+    "url": "https://energyathaas.wordpress.com/2026/09/21/fuel-price-spikes-and-the-clean-transportation-revolution/",
+    "title": "Fuel Price Spikes and the Clean Transportation Revolution",
+    "summary": "Transitory gasoline and diesel price increases are unlikely to stimulate widespread adoption of electric transportation. Since the Iran War began on February 28, 2026 the war’s effects have been felt … Continue Reading Fuel Price Spikes and the Clean Transportation Revolution",
+    "published_at": "2026-09-21T14:00:00+00:00",
+    "tags": [
+      "energy-compute"
+    ]
+  },
+  {
+    "id": 44,
+    "source_id": "sequoia-project",
+    "url": "https://sequoiaproject.org/the-sequoia-project-ahima-and-hcpro-launch-information-blocking-compliance-training-series-ahead-of-active-federal-enforcement/",
+    "title": "The Sequoia Project, AHIMA, and HCPro Launch Information Blocking Compliance Training Series Ahead of Active Federal Enforcement",
+    "summary": "The Sequoia Project, the American Health Information Management Association (AHIMA), and HCPro today announced the launch of a new role-specific online training series designed to help healthcare organizations build workforce-wide […] The post The Sequoia Project, AHIMA, and HCPro Launch Information Blocking Compliance Training Series Ahead of Active Federal Enforcement appeared first on The Sequoia Project.",
+    "published_at": "2026-09-11T12:49:23+00:00",
+    "tags": [
+      "privacy-health",
+      "regulation"
+    ]
+  },
+  {
+    "id": 45,
+    "source_id": "directtrust",
+    "url": "https://directtrust.org/blog/ai-governance-lessons-from-the-field/​",
+    "title": "AI Governance: Lessons from the Field",
+    "summary": "As organizations move from experimenting with artificial intelligence to incorporating it into everyday operations, many are discovering that governing AI can be more challenging than deploying it. Through the development of DirectTrust’s Artificial Intelligence Accreditation Program and work with those participating in its beta phase, several practical lessons have emerged about what responsible AI [...] The post AI Governance: Lessons from the Field appeared first on DirectTrust.",
+    "published_at": "2026-09-03T11:00:38+00:00",
+    "tags": [
+      "privacy-health"
+    ]
+  },
+  {
+    "id": 46,
+    "source_id": "sequoia-project",
+    "url": "https://sequoiaproject.org/the-elephant-in-the-room-industry-gaps-that-could-derail-p2p-compliance/",
+    "title": "The Elephant in the Room: Industry Gaps That Could Derail P2P Compliance",
+    "summary": "Part 4 of ‘Unlocking the Payer-to-Payer Shift: Compliance, Collaboration, and Competitive Edge,’ A 5-Part Blog Series By Jim Adamson, Senior Consultant at Point-of-Care Partners and Interoperability Matters Payer-to-Payer Workgroup Lead […] The post The Elephant in the Room: Industry Gaps That Could Derail P2P Compliance appeared first on The Sequoia Project.",
+    "published_at": "2026-09-01T18:09:35+00:00",
+    "tags": [
+      "privacy-health"
+    ]
+  },
+  {
+    "id": 47,
+    "source_id": "astp-onc-health-it-blog",
+    "url": "https://healthit.gov/blog/interoperability/nine-teams-one-mission-meet-the-ehignite-phase-1-winners/",
+    "title": "Nine Teams, One Mission: Meet the EHIgnite Phase 1 Winners",
+    "summary": "What started as a challenge to tame unwieldy single patient electronic health information (EHI) exports—often hundreds […] The post Nine Teams, One Mission: Meet the EHIgnite Phase 1 Winners appeared first on ONC Blog.",
+    "published_at": "2026-07-21T09:30:00+00:00",
+    "tags": [
+      "privacy-health"
+    ]
+  },
+  {
+    "id": 48,
+    "source_id": "astp-onc-health-it-blog",
+    "url": "https://healthit.gov/blog/standards/advancements-in-health-it-oncs-2026-approved-svap-standards/",
+    "title": "Advancements in Health IT: ONC’s 2026 Approved SVAP Standards",
+    "summary": "We are excited to announce the 2026 standards approved by the National Coordinator through ONC’s […] The post Advancements in Health IT: ONC’s 2026 Approved SVAP Standards appeared first on ONC Blog.",
+    "published_at": "2026-06-30T15:06:47+00:00",
+    "tags": [
+      "privacy-health"
+    ]
+  },
+  {
+    "id": 49,
+    "source_id": "sequoia-project",
+    "url": "https://sequoiaproject.org/the-sequoia-project-releases-new-guidance-to-advance-automated-consent-for-health-information-exchange/",
+    "title": "The Sequoia Project Releases New Guidance To Advance Automated Consent for Health Information Exchange",
+    "summary": "Resource Supports Providers, Payers, and Technology Developers To Operationalize Computable Consent (Vienna, VA – June 30, 2026) — The Sequoia Project, a leading nonprofit and trusted advocate for nationwide health information […] The post The Sequoia Project Releases New Guidance To Advance Automated Consent for Health Information Exchange appeared first on The Sequoia Project.",
+    "published_at": "2026-06-30T04:00:17+00:00",
+    "tags": [
+      "privacy-health"
+    ]
+  },
+  {
+    "id": 50,
+    "source_id": "astp-onc-health-it-blog",
+    "url": "https://healthit.gov/blog/health-information-technology-advisory-committee/hitac-highlights-affordability-data-exchange-and-innovation/",
+    "title": "HITAC Highlights Affordability, Data Exchange, and Innovation",
+    "summary": "The Health Information Technology Advisory Committee (HITAC) convened on May 7, 2026, to discuss how […] The post HITAC Highlights Affordability, Data Exchange, and Innovation appeared first on ONC Blog.",
+    "published_at": "2026-06-29T15:37:41+00:00",
+    "tags": [
+      "privacy-health"
+    ]
+  },
+  {
+    "id": 51,
+    "source_id": "smart-health-it",
+    "url": "https://smarthealthit.org/2026/03/smart-health-it-comments-on-astp-diagnostic-imaging-interoperability-rfi/?utm_source=rss&utm_medium=rss&utm_campaign=smart-health-it-comments-on-astp-diagnostic-imaging-interoperability-rfi",
+    "title": "SMART Health IT Comments on ASTP Diagnostic Imaging Interoperability RFI",
+    "summary": "By JOSHUA MANDEL, MD, DAN GOTTLIEB, MPA, and KENNETH D. MANDL, MD, MPH We strongly support ASTP/ONC’s objective of expanding standards-based, API-driven interoperability to include diagnostic imaging. The market today is highly fragmented, relying on physical media and proprietary viewer portals that are not accessible via standards-based APIs. However, the technical building blocks to solve … Continue reading \"SMART Health IT Comments on ASTP Diagnostic Imaging Interoperability RFI\" The post SMART Health IT Comments on ASTP Diagnostic Imaging Interoperability RFI appeared first on SMART Health IT.",
+    "published_at": "2026-03-03T18:35:20+00:00",
+    "tags": [
+      "privacy-health"
+    ]
+  },
+  {
+    "id": 52,
+    "source_id": "smart-health-it",
+    "url": "https://smarthealthit.org/2026/02/comments-on-the-hti-5-proposed-rule-rin-0955-aa16/?utm_source=rss&utm_medium=rss&utm_campaign=comments-on-the-hti-5-proposed-rule-rin-0955-aa16",
+    "title": "Comments on the HTI-5 Proposed Rule (RIN 0955-AA16)",
+    "summary": "SMART Health ITComputational Health Informatics ProgramBoston Children’s Hospital February 10, 2026 Re: Comments on the HTI-5 Proposed Rule (RIN 0955-AA16) Health IT Certification Program Deregulation, API Observability, and Information Sharing Submitted on behalf of the SMART Health IT team (the creators and maintainers of the SMART on FHIR ecosystem) Dear ASTP/ONC Leadership, Thank you for … Continue reading \"Comments on the HTI-5 Proposed Rule (RIN 0955-AA16)\" The post Comments on the HTI-5 Proposed Rule (RIN 0955-AA16) appeared first on SMART Health IT.",
+    "published_at": "2026-02-13T19:30:26+00:00",
+    "tags": [
+      "privacy-health"
+    ]
+  },
+  {
+    "id": 53,
+    "source_id": "smart-health-it",
+    "url": "https://smarthealthit.org/2025/06/smart-health-it-comments-on-cms-astp-onc-request-for-information-on-the-health-technology-ecosystem/?utm_source=rss&utm_medium=rss&utm_campaign=smart-health-it-comments-on-cms-astp-onc-request-for-information-on-the-health-technology-ecosystem",
+    "title": "SMART Health IT Comments on CMS/ASTP/ONC Request for Information on the Health Technology Ecosystem",
+    "summary": "This response from the SMART Health IT team (www.smarthealthit.org) at the Boston Children’s Hospital Computational Health Informatics Program, offers integrated technology and policy recommendations designed to realize a tangible vision of a learning health system accessible to every American. Our approach shifts the regulatory focus from overseeing isolated system capabilities to ensuring robust, standardized, and … Continue reading \"SMART Health IT Comments on CMS/ASTP/ONC Request for Information on the Health Technology Ecosystem\" The post SMART Health IT Comments on CMS/ASTP/ONC Request for Information on the Health Technology Ecosystem appeared first on SMART Health IT.",
+    "published_at": "2025-06-20T17:12:49+00:00",
+    "tags": [
+      "privacy-health"
+    ]
+  },
+  {
+    "id": 54,
+    "source_id": "smart-health-it",
+    "url": "https://smarthealthit.org/2024/10/smart-health-it-comments-on-astp-hti-2-proposed-rule/?utm_source=rss&utm_medium=rss&utm_campaign=smart-health-it-comments-on-astp-hti-2-proposed-rule",
+    "title": "SMART Health IT Comments on ASTP HTI-2 Proposed Rule",
+    "summary": "By JOSHUA MANDEL, MD, DAN GOTTLIEB, MPA, and KENNETH D. MANDL, MD, MPH October 1, 2024 Thank you for the opportunity to comment on the HTI-2 proposed rule! We strongly support the ASTP proposals in the rule that expand the use of open standards in healthcare, and believe they will drive innovation that empowers patients, … Continue reading \"SMART Health IT Comments on ASTP HTI-2 Proposed Rule\" The post SMART Health IT Comments on ASTP HTI-2 Proposed Rule appeared first on SMART Health IT.",
+    "published_at": "2024-10-01T14:22:00+00:00",
+    "tags": [
+      "privacy-health"
+    ]
+  },
+  {
+    "id": 55,
+    "source_id": "eia-today-in-energy",
+    "url": "https://www.eia.gov/todayinenergy/detail.php?id=68284",
+    "title": "Category 2 Hurricane Isaias nears landfall, leading to production shut-ins",
+    "summary": "As of 4:00 a.m. central time on October 9, the National Oceanic and Atmospheric Administration expects Hurricane Isaias to make landfall on the Gulf Coast late Friday or early Saturday, creating the potential for significant disruptions to energy infrastructure. Hurricane Isaias is the first hurricane of the 2026 Atlantic season and will be the largest storm system to make landfall in the region since Hurricane Helene in September 2024.",
+    "published_at": null,
+    "tags": [
+      "energy-compute"
     ]
   }
 ]
