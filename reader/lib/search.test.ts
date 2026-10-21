@@ -32,6 +32,19 @@ test("matchesQuery needs every word, ignores case, and honors exclusions", () =>
   assert.ok(matchesQuery({ title: null, summary: null }, ""));
 });
 
+test("matchesQuery tolerates one missing, extra, or swapped letter in a word", () => {
+  const item = { title: "Grid operators report summer demand", summary: null };
+  assert.ok(matchesQuery(item, "grd"));
+  assert.ok(matchesQuery(item, "gridd"));
+  assert.ok(matchesQuery(item, "gird"));
+});
+
+test("matchesQuery does not fuzzy-match short words or multiple typos", () => {
+  const item = { title: "Grid operators report summer demand", summary: null };
+  assert.ok(!matchesQuery(item, "rdi"));
+  assert.ok(!matchesQuery(item, "grxx"));
+});
+
 test("highlightParts marks matches case-insensitively and keeps all the text", () => {
   const parts = highlightParts("Grid and grids on the GRID", ["grid"]);
   assert.equal(parts.map((p) => p.text).join(""), "Grid and grids on the GRID");
