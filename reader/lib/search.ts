@@ -25,12 +25,57 @@ export function queryTerms(q: string): Terms {
   return { include, exclude };
 }
 
-// Used only for sample data (no database). The live archive uses Postgres full-text
-// search instead, which also matches word forms ("credential" finds "credentials").
+function isWithinOneEdit(query: string, word: string): boolean {
+  if (Math.abs(query.length - word.length) > 1) return false;
+
+  let queryIndex = 0;
+  let wordIndex = 0;
+  let edits = 0;
+
+  while (queryIndex < query.length && wordIndex < word.length) {
+    if (query[queryIndex] === word[wordIndex]) {
+      queryIndex++;
+      wordIndex++;
+      continue;
+    }
+
+    if (++edits > 1) return false;
+
+    if (
+      query.length === word.length &&
+      query[queryIndex] === word[wordIndex + 1] &&
+      query[queryIndex + 1] === word[wordIndex]
+    ) {
+      queryIndex += 2;
+      wordIndex += 2;
+    } else if (query.length > word.length) {
+      queryIndex++;
+    } else if (word.length > query.length) {
+      wordIndex++;
+    } else {
+      queryIndex++;
+      wordIndex++;
+    }
+  }
+
+  if (queryIndex < query.length || wordIndex < word.length) edits++;
+  return edits <= 1;
+}
+
+function matchesTerm(text: string, term: string): boolean {
+  if (text.includes(term)) return true;
+  if (term.includes(" ")) return false;
+  return (text.match(/[a-z0-9]+/g) ?? []).some(
+    (word) => Math.max(term.length, word.length) >= 4 && isWithinOneEdit(term, word),
+  );
+}
+
+// Sample-data search tolerates one edit in words; live search uses Postgres full-text
+// search, which matches word forms but does not tolerate spelling mistakes.
 export function matchesQuery(item: Pick<Item, "title" | "summary">, q: string): boolean {
   const { include, exclude } = queryTerms(q);
   const text = `${item.title ?? ""} ${item.summary ?? ""}`.toLowerCase();
-  return include.every((t) => text.includes(t)) && !exclude.some((t) => text.includes(t));
+  return include.every((t) => matchesTerm(text, t)) && !exclude.some((t) => matchesTerm(text, t));
 }
 
 export type Part = { text: string; match: boolean };
